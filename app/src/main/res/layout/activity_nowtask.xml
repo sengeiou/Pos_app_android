@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kkkk.helloworld.Activity.NowTaskActivity">
+    <RelativeLayout style="@style/topbar_bg">
+        <ImageButton
+            android:id="@+id/back"
+            style="@style/topbar_return_img"
+            android:background="@color/text_while"
+            />
+        <TextView
+            style="@style/topbar_title"
+            android:layout_centerHorizontal="true"
+            android:text="今日任务" />
+    </RelativeLayout>
+    <GridView
+        android:id="@+id/grid_nowtask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:numColumns="1"
+        android:scrollbars="none">
+    </GridView>
+</LinearLayout>

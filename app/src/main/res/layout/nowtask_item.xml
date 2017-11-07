@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/text_while"
+    android:layout_marginLeft="10.7dp"
+    android:layout_height="132.7dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10.7dp"
+        android:background="@color/text_while"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/remember_pwd"
+            android:gravity="center_vertical"
+            android:text="任务类别"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="日常维护"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/textColor_2"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:background="@drawable/status_bg_green"
+                android:textSize="12sp"
+                android:gravity="center_horizontal"
+                android:textColor="@color/text_while"
+                android:text="未开始"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/text_while"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/remember_pwd"
+            android:gravity="center_vertical"
+            android:text="机具编码"/>
+        <TextView
+            android:id="@+id/code"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="B315513"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/textColor_2"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/text_while"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/remember_pwd"
+            android:gravity="center_vertical"
+            android:text="任务发起人"/>
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="刘经理"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/textColor_2"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/bg_color"/>
+</LinearLayout>

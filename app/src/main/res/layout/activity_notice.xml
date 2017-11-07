@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.kkkk.helloworld.Activity.noticeActivity">
+    <RelativeLayout style="@style/topbar_bg">
+        <ImageButton
+            android:id="@+id/back"
+            style="@style/topbar_return_img"
+            android:background="@color/text_while"
+            />
+        <TextView
+            style="@style/topbar_title"
+            android:layout_centerHorizontal="true"
+            android:text="通知公告" />
+        <TextView
+            android:id="@+id/sendnotice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/textColor_1"
+            android:paddingRight="10.7dp"
+            android:text="发布公告"/>
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+    android:background="#ffffff"
+    app:tabIndicatorColor="@color/textColor_1"
+    app:tabIndicatorHeight="1.3dp"
+    app:tabTextColor="@color/remember_pwd"
+    app:tabSelectedTextColor="@color/textColor_1"
+    app:tabMode="fixed"
+    app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+    />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>

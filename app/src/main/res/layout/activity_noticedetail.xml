@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/text_while"
+    tools:context="com.example.kkkk.helloworld.Activity.noticedetailActivity">
+    <RelativeLayout style="@style/topbar_bg">
+        <ImageButton
+            android:id="@+id/back"
+            style="@style/topbar_return_img"
+            android:background="@color/text_while"
+            />
+        <TextView
+            style="@style/topbar_title"
+            android:layout_centerHorizontal="true"
+            android:text="公告详情" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="33.3dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10.7dp"
+        android:layout_marginRight="10.7dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/remember_pwd"
+            android:text="发布者："
+            android:textSize="10sp"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor_1"
+            android:text="胡八一"
+            android:textSize="10sp"
+            android:background="@drawable/name_frame"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="21dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="10.7dp"
+        android:layout_marginRight="10.7dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="公司主营业务增加旅游产品"
+            android:textSize="16dp"
+            android:textColor="@color/textColor_2"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2017-10-21"
+            android:textSize="10dp"
+            android:layout_marginTop="10.7dp"
+            android:textColor="@color/remember_pwd"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="10.7dp"
+        android:layout_marginRight="10.7dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请各部门安排好工作"
+            android:textSize="14sp"
+            android:textColor="@color/textColor_2"
+            android:layout_marginBottom="27.7dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/picture"/>
+
+    </LinearLayout>
+</LinearLayout>

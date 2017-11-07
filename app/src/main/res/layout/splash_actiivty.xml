@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WELCOME"
+        android:textSize="38.7sp"
+        android:gravity="center"
+        android:textColor="@color/textColor_1"
+        android:layout_marginTop="146.7sp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50.3sp"
+        android:src="@drawable/logo"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="维护业务管理系统"
+        android:textSize="16.7sp"
+        android:gravity="center"
+        android:textColor="@color/textColor_1"
+        android:layout_marginTop="48sp"/>
+
+</LinearLayout>

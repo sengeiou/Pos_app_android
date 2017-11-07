@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- topbar -->
+    <dimen name="topbar_height">72dp</dimen>
+    <dimen name="topbar_btn_min_width">40dp</dimen>
+</resources>

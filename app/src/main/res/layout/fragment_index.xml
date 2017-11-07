@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color">
+    <RelativeLayout style="@style/topbar_bg">
+        <ImageButton
+            android:id="@+id/back"
+            style="@style/topbar_return_img"
+            android:background="@color/text_while"
+            android:visibility="gone"
+            />
+        <TextView
+            style="@style/topbar_title"
+            android:layout_centerHorizontal="true"
+            android:text="首页" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:background="@drawable/glory_bg">
+        <HorizontalScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="61dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp" >
+
+                <GridView
+                    android:id="@+id/grid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:numColumns="auto_fit"
+
+                    android:stretchMode="spacingWidthUniform" >
+                </GridView>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90.7dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10.7dp">
+
+        <GridView
+            android:id="@+id/grid_"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:numColumns="3"
+            >
+        </GridView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="27.3dp"
+        android:textSize="10sp"
+        android:gravity="center_vertical"
+        android:textColor="@color/textColor_red"
+        android:drawablePadding="10.7dp"
+        android:text="紧急通知"
+        android:layout_marginTop="10.7dp"
+        android:background="@color/text_while"
+        android:drawableLeft="@drawable/attention"
+        android:paddingLeft="10.7dp" />
+    <GridView
+        android:id="@+id/grid_attention"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:numColumns="1"
+        android:scrollbars="none"
+        >
+    </GridView>
+</LinearLayout>
