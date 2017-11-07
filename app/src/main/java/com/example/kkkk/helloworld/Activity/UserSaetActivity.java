@@ -1,8 +1,12 @@
 package com.example.kkkk.helloworld.Activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdate;
@@ -18,18 +22,23 @@ import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.InfoWinAdapter;
 import com.example.kkkk.helloworld.util.AMapUtil;
 
-public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapClickListener, AMap.OnMarkerClickListener, AMap.InfoWindowAdapter  {
+public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapClickListener, AMap.OnMarkerClickListener, AMap.InfoWindowAdapter, View.OnClickListener {
     MapView mMapView = null;
     //设置希望展示的地图缩放级别
     CameraUpdate mCameraUpdate = CameraUpdateFactory.zoomTo(15);
     private AMap aMap;
-    private MapView mapView;
     private InfoWinAdapter adapter;
     private Marker oldMarker;
+    private TextView phone;
+    private TextView talk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usersaet);
+        phone= (TextView) findViewById(R.id.phone);
+        talk= (TextView) findViewById(R.id.talk);
+        phone.setOnClickListener(this);
+        talk.setOnClickListener(this);
         //获取地图控件引用
         mMapView = (MapView) findViewById(R.id.map);
         //在activity执行onCreate时执行mMapView.onCreate(savedInstanceState)，创建地图
@@ -52,7 +61,7 @@ public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapCli
         }
         //自定义InfoWindow
         aMap.setOnMarkerClickListener(this);
-        adapter = new InfoWinAdapter();
+        adapter = new InfoWinAdapter(getBaseContext());
         aMap.setInfoWindowAdapter(adapter);
     }
 
@@ -142,5 +151,27 @@ public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapCli
     public boolean onMarkerClick(Marker marker) {
         oldMarker = marker;
         return false;
+    }
+
+    /**
+     * 调用拨号界面
+     *
+     * @param phone 电话号码
+     */
+    private void call(String phone) {
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getBaseContext().startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.phone:
+                call("1212");
+                break;
+            case R.id.talk:
+                Toast.makeText(this, "不在线", Toast.LENGTH_SHORT).show();
+        }
     }
 }
