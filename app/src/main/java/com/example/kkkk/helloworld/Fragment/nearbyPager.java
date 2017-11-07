@@ -1,5 +1,6 @@
 package com.example.kkkk.helloworld.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
+import com.example.kkkk.helloworld.Activity.UserSaetActivity;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.NearbyGridAdapter;
 
@@ -41,7 +42,8 @@ public class nearbyPager extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 aAdapter.setSeclection(position);
                 aAdapter.notifyDataSetChanged();
-                Toast.makeText(getContext(), "点击了"+position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "点击了"+position, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getActivity(), UserSaetActivity.class));
 
             }
         });

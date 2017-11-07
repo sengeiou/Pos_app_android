@@ -23,7 +23,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.SplashActiivty">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.loginActivity" />
@@ -41,11 +45,7 @@
 
         </activity>
         <activity android:name=".Activity.UserSaetActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data android:name="com.amap.api.v2.apikey" android:value="d1ae7a0bdb8465e930f8072c50f5c2af">

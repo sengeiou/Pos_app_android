@@ -58,12 +58,14 @@
             android:orientation="vertical"
             android:layout_weight="1">
             <TextView
+                android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:paddingRight="29.7dp"
                 android:drawableRight="@drawable/phone"/>
             <TextView
+                android:id="@+id/talk"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"

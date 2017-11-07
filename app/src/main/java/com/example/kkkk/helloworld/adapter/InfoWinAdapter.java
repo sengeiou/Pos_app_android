@@ -6,13 +6,11 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
-import com.example.kkkk.helloworld.App;
 import com.example.kkkk.helloworld.R;
 
 
@@ -21,12 +19,15 @@ import com.example.kkkk.helloworld.R;
  * 地图上自定义的infowindow的适配器
  */
 public class InfoWinAdapter implements AMap.InfoWindowAdapter, View.OnClickListener {
-    private Context mContext = App.getInstance().getBaseContext();
+    private Context mContext;
     private LatLng latLng;
     private TextView seat;
     private String agentName;
 
 
+    public  InfoWinAdapter(Context context){
+        mContext=context;
+    }
     @Override
     public View getInfoWindow(Marker marker) {
         initData(marker);
@@ -73,15 +74,6 @@ public class InfoWinAdapter implements AMap.InfoWindowAdapter, View.OnClickListe
         }
     }
 
-    /**
-     * 调用拨号界面
-     *
-     * @param phone 电话号码
-     */
-    private void call(String phone) {
-        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phone));
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        mContext.startActivity(intent);
-    }
+
 
 }
