@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#0000"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/comment"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:text="位置"
+            android:textColor="@color/textColor_2"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!--用来偏移inforwindow的位置-->
+    <TextView
+        android:layout_width="38dp"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -10,6 +10,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    sourceSets{
+        main{
+            jniLibs.srcDirs=['libs']
+        }
     }
     buildTypes {
         release {
@@ -20,12 +26,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
-
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:design:25.3.1'
@@ -37,6 +41,13 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.jude:easyrecyclerview:3.5.7'
     compile 'com.alibaba:fastjson:1.2.24'
+    compile 'com.jude:rollviewpager:1.2.9'
+    compile 'cn.carbswang.android:NumberPickerView:1.0.2'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile files('libs/AMap_Search_V5.0.0_20170309.jar')
+    compile files('libs/AMap_Location_V3.3.0_20170118.jar')
+    compile files('libs/Android_Map3D_SDK_V5.4.0_20170928.jar')
+    compile 'com.jude:utils:1.2.1'
+    compile 'com.facebook.fresco:fresco:0.10.0'
 }

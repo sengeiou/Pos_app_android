@@ -67,7 +67,7 @@ public class attentionAdapter extends BaseAdapter {
         TextView wordtime = BaseViewHolder.get(convertView, R.id.wordtime);
         TextView wordstatus = BaseViewHolder.get(convertView, R.id.wordstatus);
         wordtitle.setText(title[position]);
-        wordname.setText(name[position]);
+        wordname.setText("发起人："+name[position]);
         wordtime.setText(time[position]);
         wordstatus.setText(status[position]);
         if (status[position].equals("确认收到")){

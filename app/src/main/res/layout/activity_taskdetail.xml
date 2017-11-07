@@ -18,6 +18,7 @@
             android:layout_centerHorizontal="true"
             android:text="任务详情" />
     </RelativeLayout>
+
     <com.jude.rollviewpager.RollPagerView
         android:id="@+id/roll_view_pager"
         android:layout_width="match_parent"
@@ -25,25 +26,25 @@
         app:rollviewpager_play_delay="2000"
         app:rollviewpager_hint_gravity="right"
         app:rollviewpager_hint_paddingRight="10.7dp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10.7dp"
         android:layout_marginTop="10.7dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="46dp"
+            android:paddingLeft="10.7dp"
+            android:background="@color/text_while"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="任务类别"
                 android:gravity="center_vertical"
+                android:text="任务类别"
                 android:textColor="@color/remember_pwd"
                 android:textSize="14sp" />
 
@@ -51,34 +52,37 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:text="日常维护"
-                android:paddingLeft="10.7dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="10.7dp"
+                android:text="日常维护"
                 android:textColor="@color/textColor_2"
                 android:textSize="14sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="16sp"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:background="@drawable/status_bg_green"
-                android:layout_gravity="center_vertical"
                 android:gravity="center_horizontal"
                 android:text="进行中"
                 android:textColor="@color/text_while"
                 android:textSize="12sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="46dp"
+            android:paddingLeft="10.7dp"
+            android:background="@color/text_while"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="机具编号"
                 android:gravity="center_vertical"
+                android:text="机具编号"
                 android:textColor="@color/remember_pwd"
                 android:textSize="14sp" />
 
@@ -86,33 +90,35 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:text="B123123"
-                android:paddingLeft="10.7dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="10.7dp"
+                android:text="B123123"
                 android:textColor="@color/textColor_2"
                 android:textSize="14sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="16sp"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text=""
                 android:textColor="@color/text_while"
                 android:textSize="12sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="71.7dp"
+            android:background="@color/text_while"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="备注"
                 android:padding="10.7dp"
+                android:text="备注"
                 android:textColor="@color/remember_pwd"
                 android:textSize="14sp" />
 
@@ -120,33 +126,37 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:text="带上维修工具"
-                android:paddingLeft="10.7dp"
                 android:padding="10.7dp"
+                android:paddingLeft="10.7dp"
+                android:text="带上维修工具"
                 android:textColor="@color/textColor_2"
                 android:textSize="14sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="16sp"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text=""
                 android:textColor="@color/text_while"
                 android:textSize="12sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="46dp"
+            android:layout_marginTop="10.7dp"
+            android:paddingLeft="10.7dp"
+            android:background="@color/text_while"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="商户名称"
                 android:gravity="center_vertical"
+                android:text="商户名称"
                 android:textColor="@color/remember_pwd"
                 android:textSize="14sp" />
 
@@ -154,33 +164,36 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:text="健之佳白云店"
-                android:paddingLeft="10.7dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="10.7dp"
+                android:text="健之佳白云店"
                 android:textColor="@color/textColor_2"
                 android:textSize="14sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="16sp"
-                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text=""
                 android:textColor="@color/text_while"
                 android:textSize="12sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="64dp"
+            android:background="@color/text_while"
+            android:paddingLeft="10.7dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="地址位置"
                 android:gravity="center_vertical"
+                android:text="地址位置"
                 android:textColor="@color/remember_pwd"
                 android:textSize="14sp" />
 
@@ -188,34 +201,37 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:text="云南省昆明市盘龙区白云路34号健之佳店"
-                android:paddingLeft="10.7dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="10.7dp"
+                android:text="云南省昆明市盘龙区白云路34号健之佳店"
                 android:textColor="@color/textColor_2"
                 android:textSize="14sp" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="16sp"
-                android:layout_weight="1"
-                android:src="@drawable/location"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
+                android:src="@drawable/location"
                 android:text="进行中"
                 android:textColor="@color/text_while"
                 android:textSize="12sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="46dp"
+            android:background="@color/text_while"
+            android:paddingLeft="10.7dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="联系人"
                 android:gravity="center_vertical"
+                android:text="联系人"
                 android:textColor="@color/remember_pwd"
                 android:textSize="14sp" />
 
@@ -223,17 +239,17 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:text="郭靖"
-                android:paddingLeft="10.7dp"
                 android:gravity="center_vertical"
+                android:paddingLeft="10.7dp"
+                android:text="郭靖"
                 android:textColor="@color/textColor_2"
                 android:textSize="14sp" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:layout_gravity="center_vertical"
+                android:layout_weight="2"
                 android:gravity="center_vertical|right"
                 android:paddingRight="11dp"
                 android:text="13088888888"
@@ -241,6 +257,8 @@
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"

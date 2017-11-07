@@ -1,5 +1,6 @@
 package com.example.kkkk.helloworld.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.kkkk.helloworld.Activity.NowTaskActivity;
+import com.example.kkkk.helloworld.Activity.noticeActivity;
 import com.example.kkkk.helloworld.adapter.GridViewAdapter;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.IndexGridAdapter;
@@ -57,6 +60,12 @@ public class indexPager extends Fragment {
                     case 0:
                         break;
                     case 1:
+                        Intent intent=new Intent(getActivity(),noticeActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 2:
+                        Intent intent2=new Intent(getActivity(),NowTaskActivity.class);
+                        startActivity(intent2);
                         break;
                     default:
                         break;

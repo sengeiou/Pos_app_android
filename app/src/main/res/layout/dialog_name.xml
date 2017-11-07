@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/text_while"
+        android:orientation="vertical">
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/name"
+            android:layout_width="303.3dp"
+            android:layout_height="53.3dp"
+            android:textCursorDrawable="@null"
+            app:met_textColorHint="@color/hint_color"
+            app:met_primaryColor="@color/textColor_1"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center"
+            android:hint="请输入要修改的昵称"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10.7dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/yes"
+                    android:layout_width="303.3dp"
+                    android:layout_height="42.7dp"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:background="@drawable/button_login"
+                    android:text="确定"
+                    android:textStyle="bold"
+                    android:textSize="16.7dp"
+                    android:textColor="@color/text_while" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

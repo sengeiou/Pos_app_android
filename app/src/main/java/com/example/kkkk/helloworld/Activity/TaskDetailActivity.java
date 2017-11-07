@@ -36,7 +36,7 @@ public class TaskDetailActivity extends AppCompatActivity {
         //设置圆点指示器颜色
         //设置文字指示器
         //隐藏指示器
-        mRollViewPager.setHintView(new IconHintView(this, R.drawable.dot_1, R.drawable.dot_2));
+        mRollViewPager.setHintView(new IconHintView(this, R.drawable.dot_1, R.drawable.dot_2,24));
         //mRollViewPager.setHintView(new ColorPointHintView(this, Color.YELLOW, Color.WHITE));
         //mRollViewPager.setHintView(new TextHintView(this));
         //mRollViewPager.setHintView(null);

@@ -55,7 +55,7 @@
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="79dp"
-
+    android:id="@+id/selectname"
     android:background="@color/text_while"
     android:orientation="horizontal">
     <TextView
@@ -71,12 +71,12 @@
         android:paddingLeft="10.7dp"
         />
     <TextView
+        android:id="@+id/name"
         android:gravity="right|center_vertical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:textSize="12sp"
         android:layout_weight="4"
-
         android:textColor="@color/remember_pwd"
         android:background="@color/text_while"
         android:text="请填写"
@@ -97,7 +97,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="79dp"
-
+        android:id="@+id/selectsex"
         android:background="@color/text_while"
         android:orientation="horizontal">
         <TextView
@@ -112,17 +112,19 @@
             android:text="性别"
             android:paddingLeft="10.7dp"
             />
+
         <TextView
-            android:gravity="right|center_vertical"
+            android:id="@+id/sex"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:textSize="12sp"
             android:layout_weight="4"
-
-            android:textColor="@color/remember_pwd"
             android:background="@color/text_while"
+            android:gravity="right|center_vertical"
+
             android:text="男"
-            />
+            android:textColor="@color/remember_pwd"
+            android:textSize="12sp" />
+
         <ImageView
             android:layout_gravity="center_vertical"
             android:layout_width="0dp"
@@ -137,9 +139,9 @@
         android:src="@drawable/enter_line"
         />
     <LinearLayout
+        android:id="@+id/selectage"
         android:layout_width="match_parent"
         android:layout_height="79dp"
-
         android:background="@color/text_while"
         android:orientation="horizontal">
         <TextView
@@ -155,6 +157,7 @@
             android:paddingLeft="10.7dp"
             />
         <TextView
+            android:id="@+id/age"
             android:gravity="right|center_vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
