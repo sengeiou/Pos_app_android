@@ -38,12 +38,7 @@ public class App extends Application {
     private String name;
     private String pwd;
 
-    private String orderNo;
-
-    private String workStatus = "free";
-
-    private String latl;
-    private String lngl;
+    private String sex;
 
     public static App getInstance() {
         return instance;
@@ -64,20 +59,20 @@ public class App extends Application {
         registerActivityLifecycleCallbacks(JActivityManager.getActivityLifecycleCallbacks());
     }
 
-    public String getMyToken() {
-        if (StringUtil.isNullOrEmpty(accessToken)) {
-            return SharedPreUtil.getValue(instance, "accessToken", "");
+    public String getSex() {
+        if (StringUtil.isNullOrEmpty(sex)) {
+            return SharedPreUtil.getValue(instance, "sex", "");
         }
-        return accessToken;
+        return sex;
     }
 
-    public void setMyToken(String accessToken) {
-        if (!StringUtil.isNullOrEmpty(accessToken)) {
-            SharedPreUtil.putValue(instance, "accessToken", accessToken);
-            this.accessToken = accessToken;
+    public void setSex(String sex) {
+        if (!StringUtil.isNullOrEmpty(sex)) {
+            SharedPreUtil.putValue(instance, "sex", sex);
+            this.sex = sex;
         } else {
-            SharedPreUtil.putValue(instance, "accessToken", "");
-            this.accessToken = "";
+            SharedPreUtil.putValue(instance, "sex", "");
+            this.sex = "";
         }
     }
 

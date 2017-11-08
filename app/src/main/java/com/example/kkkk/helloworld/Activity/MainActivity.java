@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.kkkk.helloworld.Fragment.indexPager;
 import com.example.kkkk.helloworld.Fragment.nearbyPager;
@@ -15,7 +16,7 @@ import com.example.kkkk.helloworld.adapter.TablayoutAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseAppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
 
     private TabLayout mTabLayout;
@@ -85,23 +86,6 @@ public class MainActivity extends BaseAppCompatActivity {
 
     }
 
-    /*public void getData() {
-        list = new ArrayList<attentionNotify>();
-        attentionNotify item = new attentionNotify();
-        item.setWroktitle("工作调度");
-        item.setWrokname("小王");
-        item.setWrokstatus("确认收到");
-        item.setWroktitle("2017-9-9 12:00");
-        list.add(item);
-        item = new attentionNotify();
-        item.setWroktitle("工作调度");
-        item.setWrokname("老王");
-        item.setWrokstatus("等待处理");
-        item.setWroktitle("2017-9-9 12:00");
-        list.add(item);
-        list.addAll(list);
-        //aAdapter.addAll(list);
-    }*/
 
 }
 

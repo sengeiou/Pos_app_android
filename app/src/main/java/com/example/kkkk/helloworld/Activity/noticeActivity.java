@@ -1,15 +1,22 @@
 package com.example.kkkk.helloworld.Activity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.kkkk.helloworld.adapter.MyFragmentPagerAdapter;
 import com.example.kkkk.helloworld.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class noticeActivity extends AppCompatActivity {
 
@@ -18,10 +25,13 @@ public class noticeActivity extends AppCompatActivity {
     private MyFragmentPagerAdapter myFragmentPagerAdapter;
 
     private TextView send;
+    @BindView(R.id.back)
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice);
+        ButterKnife.bind(this);
         initViews();
     }
 
@@ -53,5 +63,14 @@ public class noticeActivity extends AppCompatActivity {
             }
         });
     }
-
+    @OnClick({R.id.back})
+    void click(View v){
+        switch (v.getId()){
+            case R.id.back:
+                finish();
+                break;
+            default:
+                break;
+        }
+    }
 }

@@ -2,15 +2,24 @@ package com.example.kkkk.helloworld.Activity;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,99 +29,161 @@ import com.example.kkkk.helloworld.Dialog.NameDialog;
 import com.example.kkkk.helloworld.Dialog.SexDialog;
 import com.example.kkkk.helloworld.R;
 
+import java.io.File;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class userinfoActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String BROADCAST_ACTION_AGE = "com.example.kkk.age";
     public static final String BROADCAST_ACTION_NAME = "com.example.kkk.name";
     public static final String BROADCAST_ACTION_SEX = "com.example.kkk.sex";
+    public static final int CHOOSE_PICTURE = 0;
+    public static final int TAKE_PICTURE = 1;
+    public static final int CROP_SMALL_PRCIURE = 2;
+    @BindView(R.id.name)
+    TextView name;
+    @BindView(R.id.sex)
+    TextView sex;
+    @BindView(R.id.age)
+    TextView age;
+    @BindView(R.id.icon)
+    CircleImageView icon;
     private BroadcastReceiver mBroadcastReceiver;
     IntentFilter intentFilter;
     private DialogNPV mDialogNPV;
     private SexDialog sexDialog;
     private NameDialog nameDialog;
+    @BindView(R.id.back)
+    ImageButton back;
+    @BindView(R.id.selectage)
     LinearLayout selectAge;
+    @BindView(R.id.selectsex)
     LinearLayout selectSex;
+    @BindView(R.id.selectname)
     LinearLayout selectname;
-    TextView age;
-    TextView sex;
-    TextView name;
+    @BindView(R.id.selecticon)
+    LinearLayout selecticon;
+    Uri tempUri;
+    Bitmap mBitmap;
+    Intent data;
+    String age_;
+    String sex_;
+    String name_;
+    private boolean nameTag = false;   //广播接受者标识
+    private boolean sexTag = false;   //广播接受者标识
+    private boolean ageTag = false;   //广播接受者标识
+    AlertDialog alertDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinfo);
-        selectAge= (LinearLayout) findViewById(R.id.selectage);
-        selectSex= (LinearLayout) findViewById(R.id.selectsex);
-        selectname=(LinearLayout) findViewById(R.id.selectname);
-        age= (TextView) findViewById(R.id.age);
-        sex= (TextView) findViewById(R.id.sex);
-        name= (TextView) findViewById(R.id.name);
-        selectAge.setOnClickListener(this);
-        selectSex.setOnClickListener(this);
-        selectname.setOnClickListener(this);
+        ButterKnife.bind(this);
 
-        selectAge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intentFilter.addAction(BROADCAST_ACTION_AGE);
-                registerReceiver(mBroadcastReceiver, intentFilter);
-                showNPVDialog();
-            }
-        });
-        selectSex.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intentFilter.addAction(BROADCAST_ACTION_SEX);
-                registerReceiver(mBroadcastReceiver, intentFilter);
-                showSexDialog();
-            }
-        });
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
+    @OnClick({R.id.back, R.id.selectage, R.id.selectsex, R.id.selectname, R.id.selecticon})
+    void click(View v) {
+        switch (v.getId()) {
+            case R.id.back:
+                //Intent intent=new Intent(userinfoActivity.this,MainActivity.class);
+                //startActivity(intent);
+                getBackData();
+                finish();
+                break;
             case R.id.selectage:
-                intentFilter.addAction(BROADCAST_ACTION_AGE);
-                registerReceiver(mBroadcastReceiver, intentFilter);
+                registerReceiver(BROADCAST_ACTION_AGE);
                 showNPVDialog();
                 break;
             case R.id.selectsex:
-                intentFilter.addAction(BROADCAST_ACTION_SEX);
-                registerReceiver(mBroadcastReceiver, intentFilter);
+                registerReceiver(BROADCAST_ACTION_SEX);
                 showSexDialog();
                 break;
             case R.id.selectname:
-                intentFilter.addAction(BROADCAST_ACTION_NAME);
-                registerReceiver(mBroadcastReceiver, intentFilter);
+               registerReceiver(BROADCAST_ACTION_NAME);
                 showNameDialog();
                 break;
+            case R.id.selecticon:
+                showChoosePicDialog();
+                break;
+            default:
+                break;
         }
+    }
+
+    //代码中动态注册广播
+    private void registerReceiver(String action) {
+        switch (action){
+            case BROADCAST_ACTION_AGE:
+                if (!nameTag) {   //在注册广播接受者的时候 判断是否已被注册,避免重复多次注册广播
+                    intentFilter = new IntentFilter();
+                    intentFilter.addAction(action);
+                    this.registerReceiver(mBroadcastReceiver, intentFilter);
+                }
+                break;
+            case BROADCAST_ACTION_NAME:
+                if (!sexTag) {   //在注册广播接受者的时候 判断是否已被注册,避免重复多次注册广播
+                    intentFilter = new IntentFilter();
+                    intentFilter.addAction(action);
+                    this.registerReceiver(mBroadcastReceiver, intentFilter);
+                }
+                break;
+            case BROADCAST_ACTION_SEX:
+                if (!sexTag) {   //在注册广播接受者的时候 判断是否已被注册,避免重复多次注册广播
+                    intentFilter = new IntentFilter();
+                    intentFilter.addAction(action);
+                    this.registerReceiver(mBroadcastReceiver, intentFilter);
+                }
+                break;
+        }
+
+    }
+
+    //注销广播
+    private void unregisterReceiver() {
+        if (nameTag) {   //判断广播是否注册
+            nameTag = false;   //Tag值 赋值为false 表示该广播已被注销
+            this.unregisterReceiver(mBroadcastReceiver);   //注销广播
+        }
+        if (sexTag) {   //判断广播是否注册
+            sexTag = false;   //Tag值 赋值为false 表示该广播已被注销
+            this.unregisterReceiver(mBroadcastReceiver);   //注销广播
+        }
+        if (ageTag) {   //判断广播是否注册
+            ageTag = false;   //Tag值 赋值为false 表示该广播已被注销
+            this.unregisterReceiver(mBroadcastReceiver);   //注销广播
+        }
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         mBroadcastReceiver = new mBroadcastReceiver();
-        intentFilter = new IntentFilter();
-
     }
-//注册广播后，要在相应位置记得销毁广播
-//即在onPause() 中unregisterReceiver(mBroadcastReceiver)
-//当此Activity实例化时，会动态将MyBroadcastReceiver注册到系统中
-//当此Activity销毁时，动态注册的MyBroadcastReceiver将不再接收到相应的广播。
 
     @Override
     protected void onPause() {
         super.onPause();
         //销毁在onResume()方法中的广播
-        unregisterReceiver(mBroadcastReceiver);
+        unregisterReceiver();
     }
-    private void showNPVDialog(){
-        if(mDialogNPV == null){
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
+
+    private void showNPVDialog() {
+        if (mDialogNPV == null) {
             mDialogNPV = new DialogNPV(this);
         }
-        if(mDialogNPV.isShowing()){
+        if (mDialogNPV.isShowing()) {
             mDialogNPV.dismiss();
-        }else {
+        } else {
             mDialogNPV.setCancelable(true);
             mDialogNPV.setCanceledOnTouchOutside(true);
             mDialogNPV.show();
@@ -124,21 +195,17 @@ public class userinfoActivity extends AppCompatActivity implements View.OnClickL
             WindowManager.LayoutParams p = mDialogNPV.getWindow().getAttributes(); //获取对话框当前的参数值
             p.width = d.getWidth(); //宽度设置为屏幕
             mDialogNPV.getWindow().setAttributes(p); //设置生效
-            // recommend initializing data (or setting certain data) of NumberPickView
-            // every time setting up NumberPickerView,
-            // and setting attr app:npv_RespondChangeOnDetached="false" to avoid NumberPickView
-            // of responding onValueChanged callback if NumberPickerView detach from window
-            // when it is scrolling
             mDialogNPV.initNPV();
         }
     }
-    private void showSexDialog(){
-        if(sexDialog == null){
+
+    private void showSexDialog() {
+        if (sexDialog == null) {
             sexDialog = new SexDialog(this);
         }
-        if(sexDialog.isShowing()){
+        if (sexDialog.isShowing()) {
             sexDialog.dismiss();
-        }else {
+        } else {
             sexDialog.setCancelable(true);
             sexDialog.setCanceledOnTouchOutside(true);
             sexDialog.show();
@@ -146,14 +213,16 @@ public class userinfoActivity extends AppCompatActivity implements View.OnClickL
             window.setGravity(Gravity.BOTTOM);
             window.setWindowAnimations(R.style.bottom_menu_animation);
         }
+
     }
-    private void showNameDialog(){
-        if(nameDialog == null){
+
+    private void showNameDialog() {
+        if (nameDialog == null) {
             nameDialog = new NameDialog(this);
         }
-        if(nameDialog.isShowing()){
+        if (nameDialog.isShowing()) {
             nameDialog.dismiss();
-        }else {
+        } else {
             nameDialog.setCancelable(true);
             nameDialog.setCanceledOnTouchOutside(true);
             nameDialog.show();
@@ -168,33 +237,131 @@ public class userinfoActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.sex1:
+                Intent openAlbumIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                openAlbumIntent.setType("image/*");
+                startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
+                break;
+            case R.id.sex2:
+                Intent openCamerIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                tempUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), "temp_image.jpg"));
+                openCamerIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
+                startActivityForResult(openCamerIntent, TAKE_PICTURE);
+                break;
+            case R.id.cannel:
+                alertDialog.dismiss();
+                break;
+        }
+    }
+
     public class mBroadcastReceiver extends BroadcastReceiver {
 
         //接收到广播后自动调用该方法
         @Override
         public void onReceive(Context context, Intent intent) {
             //写入接收广播后的操作
-            switch (intent.getAction()){
+            switch (intent.getAction()) {
                 case BROADCAST_ACTION_AGE:
-                    String age_ = intent.getExtras().getString("age");
+                    age_ = intent.getExtras().getString("age");
                     age.setText(age_);
                     break;
                 case BROADCAST_ACTION_NAME:
-                    String name_ = intent.getExtras().getString("name");
-                    if (!name_.equals("")){
+                    name_ = intent.getExtras().getString("name");
+                    if (!name_.equals("")) {
                         name.setText(name_);
-                    }else {
+                    } else {
                         Toast.makeText(context, "昵称为空", Toast.LENGTH_SHORT).show();
                     }
                     break;
                 case BROADCAST_ACTION_SEX:
-                    String sex_ = intent.getExtras().getString("sex");
+                    sex_ = intent.getExtras().getString("sex");
                     sex.setText(sex_);
                     break;
             }
-
         }
     }
 
+    protected void showChoosePicDialog() {
+        alertDialog  = new AlertDialog.Builder(userinfoActivity.this).create();
+        alertDialog.show();
+        Window window = alertDialog.getWindow();
+        window.setContentView(R.layout.dialog_sex);
+        window.setGravity(Gravity.BOTTOM);
+        window.setWindowAnimations(R.style.bottom_menu_animation);
+        TextView tv_man = (TextView) window.findViewById(R.id.sex1);
+        tv_man.setText("相册");
+        TextView tv_woman = (TextView) window.findViewById(R.id.sex2);
+        tv_woman.setText("拍照");
+        TextView tv_cannel = (TextView) window.findViewById(R.id.cannel);
+        tv_cannel.setText("取消");
+        tv_man.setOnClickListener(this);
+        tv_woman.setOnClickListener(this);
+        tv_cannel.setOnClickListener(this);
+    }
+    /**
+     * 裁剪图片
+     */
+    protected void cutImage(Uri uri) {
+        if (uri == null) {
+            Log.i("err", "cutImage: ");
+        }
+        tempUri = uri;
+        Intent intent = new Intent("com.android.camera.action.CROP");
+        intent.setDataAndType(uri, "image/*");
+        intent.putExtra("crop", "true");
+        // aspectX aspectY 是宽高的比例
+        intent.putExtra("aspectX", 1);
+        intent.putExtra("aspectY", 1);
+        // outputX outputY 是裁剪图片宽高
+        intent.putExtra("outputX", 150);
+        intent.putExtra("outputY", 150);
+        intent.putExtra("return-data", true);
+        startActivityForResult(intent, CROP_SMALL_PRCIURE);
+    }
 
+    /**
+     * 显示图片
+     */
+    protected void setImageView(Intent data) {
+        Bundle extras = data.getExtras();
+        if (extras != null) {
+            mBitmap = extras.getParcelable("data");
+            icon.setImageBitmap(mBitmap);
+        }
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==userinfoActivity.RESULT_OK){
+            switch (requestCode){
+                case TAKE_PICTURE:
+                    cutImage(tempUri);
+                    break;
+                case CHOOSE_PICTURE:
+                    cutImage(data.getData());
+                    break;
+                case CROP_SMALL_PRCIURE:
+                    setImageView(data);
+            }
+
+        }
+        //this.data=data;
+    }
+    protected void getBackData(){
+        Bitmap bitmap = null;
+        bitmap=mBitmap;
+        Bundle backData= new Bundle();
+        backData.putParcelable("icon",bitmap);
+        backData.putString("age",age.getText().toString());
+        backData.putString("name",name.getText().toString());
+        backData.putString("sex",sex.getText().toString());
+        Intent intent = new Intent();
+        intent.putExtras(backData);
+        setResult(0,intent);
+    }
 }

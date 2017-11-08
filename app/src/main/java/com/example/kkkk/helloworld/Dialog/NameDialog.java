@@ -21,6 +21,7 @@ public class NameDialog extends Dialog implements View.OnClickListener {
     MaterialEditText name;
     Button yes;
     Intent intent;
+    String nn;
     public static final String BROADCAST_ACTION_NAME = "com.example.kkk.name";
 
     public NameDialog(Context context) {
@@ -38,7 +39,6 @@ public class NameDialog extends Dialog implements View.OnClickListener {
          initView();
 
      }
-
 
     /**
 .     * 初始化界面控件

@@ -14,7 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.kkkk.helloworld.Activity.NowTaskActivity;
+import com.example.kkkk.helloworld.Activity.SignInActivity;
 import com.example.kkkk.helloworld.Activity.noticeActivity;
+import com.example.kkkk.helloworld.Activity.noticedetailActivity;
 import com.example.kkkk.helloworld.adapter.GridViewAdapter;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.IndexGridAdapter;
@@ -34,6 +36,7 @@ public class indexPager extends Fragment {
     GridView gridView;
     GridView grdView2;
     GridView grid_attention;
+    Intent intent;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,14 +61,16 @@ public class indexPager extends Fragment {
                 gridadapter.notifyDataSetChanged();
                 switch (position) {
                     case 0:
+                        intent=new Intent(getActivity(),SignInActivity.class);
+                        startActivity(intent);
                         break;
                     case 1:
-                        Intent intent=new Intent(getActivity(),noticeActivity.class);
+                        intent=new Intent(getActivity(),noticeActivity.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        Intent intent2=new Intent(getActivity(),NowTaskActivity.class);
-                        startActivity(intent2);
+                        intent=new Intent(getActivity(),NowTaskActivity.class);
+                        startActivity(intent);
                         break;
                     default:
                         break;
@@ -80,7 +85,8 @@ public class indexPager extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 aAdapter.setSeclection(position);
                 aAdapter.notifyDataSetChanged();
-                Toast.makeText(getContext(), "点击了"+position, Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getActivity(),noticedetailActivity.class);
+                startActivity(intent);
 
             }
         });

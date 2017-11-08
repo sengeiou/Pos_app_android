@@ -263,7 +263,7 @@
             android:background="@color/remember_pwd" />
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="117dp"
             android:layout_marginTop="10.7dp"
             android:textCursorDrawable="@null"
             android:background="@color/bg_color"
@@ -273,7 +273,31 @@
             android:paddingLeft="10dp"
             android:gravity="start"
             android:hint="请输入公告内容"/>
+        <LinearLayout
+            android:layout_width="359.9dp"
+            android:layout_height="103.3dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="103.3dp"
+                android:layout_height="103.3dp"
+                android:src="@drawable/head"
+                android:layout_marginLeft="10.7dp"
+                android:layout_marginRight="14.3dp"/>
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="103.3dp"
+                android:layout_height="103.3dp"
+                android:layout_marginRight="14.3dp" />
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="103.3dp"
+                android:layout_height="103.3dp" />
+        </LinearLayout>
         <ImageView
+            android:id="@+id/setimg"
             android:layout_width="103.3dp"
             android:layout_height="103.3dp"
             android:layout_marginLeft="10.3dp"

@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,32 +23,42 @@ import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.InfoWinAdapter;
 import com.example.kkkk.helloworld.util.AMapUtil;
 
-public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapClickListener, AMap.OnMarkerClickListener, AMap.InfoWindowAdapter, View.OnClickListener {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapClickListener, AMap.OnMarkerClickListener,
+        AMap.InfoWindowAdapter {
     MapView mMapView = null;
     //设置希望展示的地图缩放级别
     CameraUpdate mCameraUpdate = CameraUpdateFactory.zoomTo(15);
     private AMap aMap;
     private InfoWinAdapter adapter;
     private Marker oldMarker;
-    private TextView phone;
-    private TextView talk;
+    @BindView(R.id.phone)
+    TextView phone;
+    @BindView(R.id.talk)
+    TextView talk;
+    @BindView(R.id.back)
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usersaet);
-        phone= (TextView) findViewById(R.id.phone);
-        talk= (TextView) findViewById(R.id.talk);
-        phone.setOnClickListener(this);
-        talk.setOnClickListener(this);
+        ButterKnife.bind(this);
+        //phone= (TextView) findViewById(R.id.phone);
+        //talk= (TextView) findViewById(R.id.talk);
+        //phone.setOnClickListener(this);
+        //talk.setOnClickListener(this);
         //获取地图控件引用
         mMapView = (MapView) findViewById(R.id.map);
         //在activity执行onCreate时执行mMapView.onCreate(savedInstanceState)，创建地图
         mMapView.onCreate(savedInstanceState);
-        initView();
+        //initView();
         init();
         aMap.moveCamera(mCameraUpdate);
         aMap.moveCamera(CameraUpdateFactory.changeLatLng(new LatLng(25.0109100000,102.7361000000)));
-        setUserMarker(25.0109100000,102.7361000000,"星河明居");
+        setUserMarker(25.0109100000,102.7361000000,"昆明市官渡区宝海路181号星河明居");
     }
 
     /**
@@ -96,10 +107,12 @@ public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapCli
 
     private void setUserMarker(Double lat, Double lng, String origin) {
         // 有打点效果
-        aMap.addMarker(new MarkerOptions()
+        Marker marker;
+        marker=aMap.addMarker(new MarkerOptions()
                 .position(AMapUtil.convertToLatLng(new LatLonPoint(lat, lng)))
                 .title(origin)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.pin)));
+        marker.showInfoWindow();
     }
     @Override
     protected void onDestroy() {
@@ -124,9 +137,6 @@ public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapCli
         super.onSaveInstanceState(outState);
         //在activity执行onSaveInstanceState时执行mMapView.onSaveInstanceState (outState)，保存地图当前的状态
         mMapView.onSaveInstanceState(outState);
-    }
-    private void initView() {
-
     }
     @Override
     public void onMapClick(LatLng latLng) {
@@ -163,15 +173,20 @@ public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapCli
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getBaseContext().startActivity(intent);
     }
-
-    @Override
-    public void onClick(View v) {
+    @OnClick({R.id.back,R.id.phone,R.id.talk})
+    void click(View v){
         switch (v.getId()){
             case R.id.phone:
                 call("1212");
                 break;
             case R.id.talk:
                 Toast.makeText(this, "不在线", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.back:
+                finish();
+                break;
+            default:
+                break;
         }
     }
 }

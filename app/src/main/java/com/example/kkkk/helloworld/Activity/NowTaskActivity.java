@@ -6,17 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.nowtaskAdapter;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class NowTaskActivity extends AppCompatActivity {
     GridView gridView;
+    @BindView(R.id.back)
+    ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nowtask);
+        ButterKnife.bind(this);
         gridView = (GridView) findViewById(R.id.grid_nowtask);
         initView();
     }
@@ -35,5 +43,15 @@ public class NowTaskActivity extends AppCompatActivity {
 
             }
         });
+    }
+    @OnClick({R.id.back})
+    void click(View v){
+        switch (v.getId()){
+            case R.id.back:
+                finish();
+                break;
+            default:
+                break;
+        }
     }
 }

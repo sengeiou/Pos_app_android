@@ -19,6 +19,7 @@
             android:text="个人资料" />
     </RelativeLayout>
     <LinearLayout
+        android:id="@+id/selecticon"
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:layout_marginTop="10.7dp"
@@ -35,9 +36,14 @@
             android:background="@color/text_while"
             android:text="头像"
             android:paddingLeft="10.7dp"
-
-            android:drawableRight="@drawable/head"
             />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon"
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/head"
+            android:layout_weight="1"/>
         <ImageView
             android:layout_gravity="center_vertical"
             android:layout_width="0dp"
