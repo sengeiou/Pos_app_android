@@ -289,6 +289,7 @@
                 android:id="@+id/img2"
                 android:layout_width="103.3dp"
                 android:layout_height="103.3dp"
+                android:src="@drawable/head"
                 android:layout_marginRight="14.3dp" />
 
             <ImageView

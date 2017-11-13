@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -333,7 +334,16 @@ public class userinfoActivity extends AppCompatActivity implements View.OnClickL
         }
 
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            getBackData();
+            finish();
+            return true;
+        }
 
+        return super.onKeyDown(keyCode, event);
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -348,7 +358,7 @@ public class userinfoActivity extends AppCompatActivity implements View.OnClickL
                 case CROP_SMALL_PRCIURE:
                     setImageView(data);
             }
-
+            alertDialog.dismiss();
         }
         //this.data=data;
     }

@@ -1,5 +1,6 @@
 package com.example.kkkk.helloworld.Fragment;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,9 +12,23 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.example.kkkk.helloworld.Activity.noticedetailActivity;
+import com.example.kkkk.helloworld.App;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.readGridAdapter;
+import com.example.kkkk.helloworld.http.RetrofitHttp;
+import com.example.kkkk.helloworld.starItem;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import okhttp3.OkHttpClient;
+import okhttp3.ResponseBody;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Administrator on 2017/11/6.
@@ -22,16 +37,61 @@ import com.example.kkkk.helloworld.adapter.readGridAdapter;
 public class readFragment extends Fragment {
 
     GridView gridView;
+    private ProgressDialog mDialog;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_read,container,false);
 
         gridView = (GridView) view.findViewById(R.id.grid_read);
         initView();
+        getReadList();
         return view;
     }
 
     private void initView() {
-        final readGridAdapter gridadapter=new readGridAdapter(getContext());
+        mDialog = new ProgressDialog(getActivity());
+        mDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mDialog.setMessage("请稍等");
+        mDialog.setIndeterminate(false);
+        // 设置ProgressDialog 是否可以按退回按键取消
+        mDialog.setCancelable(true);
+    }
+
+    private void getReadList(){
+        mDialog.show();
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        RetrofitHttp.getRetrofit(builder.build()).ReadList(App.getInstance().getMyToken(),"1")
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Response<ResponseBody> response) {
+                        mDialog.dismiss();
+                        try {
+                            String result = response.body().string();
+                            JSONObject jsonObject = JSON.parseObject(result);
+                            String msg = jsonObject.getString("message");
+                            String data = jsonObject.getString("data");
+                            JSONObject data_ = JSON.parseObject(data);
+                            String list =data_.getString("list");
+                            if (jsonObject.getString("code").equals("failure")) {
+                                Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
+                                return;
+                            } else {
+                                JSONArray list_temp = JSON.parseArray(list);
+                                loadList(list_temp);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        mDialog.dismiss();
+                        Toast.makeText(getContext(), "未知错误", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+    private void loadList(JSONArray list){
+        final readGridAdapter gridadapter=new readGridAdapter(getContext(),list);
         gridView.setAdapter(gridadapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -41,22 +101,8 @@ public class readFragment extends Fragment {
                 Toast.makeText(getContext(), "已读通告"+position, Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(getActivity(),noticedetailActivity.class);
                 startActivity(intent);
-                switch (position) {
-                    case 0:
-                        break;
-                    case 1:
-                        //Intent intent=new Intent(getActivity(),noticeActivity.class);
-                        //startActivity(intent);
-                        break;
-                    case 2:
-                        break;
-                    default:
-                        break;
-                }
 
             }
         });
     }
-
-
 }

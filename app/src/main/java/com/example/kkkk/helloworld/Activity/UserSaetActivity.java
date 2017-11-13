@@ -180,7 +180,8 @@ public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapCli
                 call("1212");
                 break;
             case R.id.talk:
-                Toast.makeText(this, "不在线", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "不在线", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getBaseContext(), ChatActivity.class).putExtra("userId", "782818448"));
                 break;
             case R.id.back:
                 finish();

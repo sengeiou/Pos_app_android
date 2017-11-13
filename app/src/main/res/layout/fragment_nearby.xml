@@ -14,6 +14,10 @@
             android:layout_centerHorizontal="true"
             android:text="附近" />
     </RelativeLayout>
+    <jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_swipe">
     <GridView
         android:id="@+id/grid_nearby"
         android:layout_width="match_parent"
@@ -23,4 +27,5 @@
         android:scrollbars="none"
         >
     </GridView>
+    </jp.co.recruit_lifestyle.android.widget.WaveSwipeRefreshLayout>
 </LinearLayout>

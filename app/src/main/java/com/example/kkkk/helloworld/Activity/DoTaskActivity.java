@@ -2,6 +2,9 @@ package com.example.kkkk.helloworld.Activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,9 +19,16 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.ItemAdapter;
+
+import net.lemonsoft.lemonhello.LemonHello;
+import net.lemonsoft.lemonhello.LemonHelloAction;
+import net.lemonsoft.lemonhello.LemonHelloInfo;
+import net.lemonsoft.lemonhello.LemonHelloView;
+import net.lemonsoft.lemonhello.interfaces.LemonHelloActionDelegate;
 
 import java.io.File;
 
@@ -44,7 +54,7 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
     Uri tempUri;
     Bitmap mBitmap;
     Bitmap obmp;
-    String log;
+    int log=-1;
     public static final int CHOOSE_PICTURE = 0;
     public static final int TAKE_PICTURE = 1;
     public static final int CROP_SMALL_PRCIURE = 2;
@@ -70,7 +80,7 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
         });
     }
 
-    @OnClick({R.id.back,R.id.setimg})
+    @OnClick({R.id.back,R.id.setimg,R.id.img1,R.id.img2,R.id.img3})
     void click(View v) {
         switch (v.getId()) {
             case R.id.back:
@@ -78,13 +88,35 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
                 break;
             case R.id.setimg:
                 if (img1.getDrawable() == null){
-                    log="1";
+                    log=1;
                 }else if (img2.getDrawable()==null){
-                    log="2";
+                    log=2;
                 } else if (img3.getDrawable()==null){
-                    log="3";
+                    log=3;
+                }
+                if (log>3){
+                    Toast.makeText(this, "最多上传三张照片", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 showChoosePicDialog();
+                break;
+            case R.id.img1:
+                if (img1.getDrawable() == null){
+                    return;
+                }
+                showDialog(img1);
+                break;
+            case R.id.img2:
+                if (img2.getDrawable() == null){
+                    return;
+                }
+                showDialog(img2);
+                break;
+            case R.id.img3:
+                if (img3.getDrawable() == null){
+                    return;
+                }
+                showDialog(img3);
                 break;
             default:
                 break;
@@ -155,9 +187,19 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
         Bundle extras = data.getExtras();
         if (extras != null) {
             mBitmap = extras.getParcelable("data");
-            //icon.setImageBitmap(mBitmap);
+            switch (log){
+                case 1:
+                    img1.setImageBitmap(mBitmap);
+                    break;
+                case 2:
+                    img2.setImageBitmap(mBitmap);
+                    break;
+                case 3:
+                    img3.setImageBitmap(mBitmap);
+                    log=4;
+                    break;
+            }
         }
-
     }
 
     @Override
@@ -174,8 +216,41 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
                 case CROP_SMALL_PRCIURE:
                     setImageView(data);
             }
+            alertDialog.dismiss();
 
         }
         //this.data=data;
+    }
+
+    /*回收图片资源*/
+    public static void releaseImageViewResouce(ImageView imageView) {
+        if (imageView == null) return;
+        Drawable drawable = imageView.getDrawable();
+        if (drawable != null && drawable instanceof BitmapDrawable) {
+            BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+            Bitmap bitmap = bitmapDrawable.getBitmap();
+            if (bitmap != null && !bitmap.isRecycled()) {
+                bitmap.recycle();
+            }
+        }
+    }
+
+    private void showDialog(final ImageView img) {
+        LemonHello.getWarningHello("您确定要删除图片吗？", "")
+                .addAction(new LemonHelloAction("取消", new LemonHelloActionDelegate() {
+                    @Override
+                    public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                        helloView.hide();
+                    }
+                }))
+                .addAction(new LemonHelloAction("我要删除", Color.RED, new LemonHelloActionDelegate() {
+                    @Override
+                    public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                        helloView.hide();
+                        img.setImageDrawable(null);
+                        releaseImageViewResouce(img);
+                    }
+                }))
+                .show(DoTaskActivity.this);
     }
 }

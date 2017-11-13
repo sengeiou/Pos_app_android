@@ -8,8 +8,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSONArray;
 import com.example.kkkk.helloworld.BaseViewHolder;
 import com.example.kkkk.helloworld.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2017/11/6.
@@ -20,14 +24,15 @@ public class readGridAdapter extends BaseAdapter {
         public String[] img_text_0 = {"签到", "通知公告", "今日任务"};
         public int[] imgs_0= {R.drawable.picture, R.drawable.picture, R.drawable.picture};
         private Context mContext;
-
+        JSONArray list = new JSONArray();
         final int itemLength = 4;
         private int clickTemp = -1;//标识被选择的item
         private int[] clickedList=new int[itemLength];//这个数组用来存放item的点击状态
 
-    public readGridAdapter(Context mContext) {
+    public readGridAdapter(Context mContext, JSONArray list) {
             super();
             this.mContext = mContext;
+            this.list=list;
             for (int i =0;i<itemLength;i++){
                 clickedList[i]=0;      //初始化item点击状态的数组
             }

@@ -58,6 +58,7 @@
         android:orientation="vertical">
 
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/username"
             android:layout_width="303.3dp"
             android:layout_height="53.3dp"
             android:textCursorDrawable="@null"
@@ -68,6 +69,7 @@
             android:layout_gravity="center"
             android:hint="请输入用户名"/>
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/password"
             android:layout_width="303.3dp"
             android:layout_height="53.3dp"
             android:textCursorDrawable="@null"

@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import com.example.kkkk.helloworld.BaseViewHolder;
 import com.example.kkkk.helloworld.R;
+import com.example.kkkk.helloworld.model.bean.WarringMsg;
+
+import java.util.List;
 
 /**
  * @author http://blog.csdn.net/finddreams
@@ -17,18 +20,19 @@ import com.example.kkkk.helloworld.R;
 public class attentionAdapter extends BaseAdapter {
     public String[] title = {"工作调度通知", "工作调度通知","工作调度通知","工作调度通知", "工作调度通知","工作调度通知"};
     public String[] name = {"小王", "小王","小王","小王", "小王","小王"};
-    public String[] status = {"确认收到", "等待处理","等待处理","确认收到", "等待处理","等待处理"};
+    public String[] status = {"等待处理", "确认收到"};
     public String[] time = {"2017 9-10", "2017 9-10","2017 9-10","2017 9-10", "2017 9-10","2017 9-10"};
-    public int[] imgs_0= {R.drawable.status_bg_green, R.drawable.status_bg_orange};//,
+    public int[] imgs_0= {R.drawable.status_bg_orange, R.drawable.status_bg_green};//,
     private Context mContext;
-
+    List<WarringMsg> list;
     final int itemLength = 4;
     private int clickTemp = -1;//标识被选择的item
     private int[] clickedList=new int[itemLength];//这个数组用来存放item的点击状态
 
-    public attentionAdapter(Context mContext) {
+    public attentionAdapter(Context mContext,List<WarringMsg> list) {
         super();
         this.mContext = mContext;
+        this.list=list;
         for (int i =0;i<itemLength;i++){
             clickedList[i]=0;      //初始化item点击状态的数组
         }
@@ -42,7 +46,7 @@ public class attentionAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return title.length;
+        return list.size();
     }
 
     @Override
@@ -66,16 +70,24 @@ public class attentionAdapter extends BaseAdapter {
         TextView wordname = BaseViewHolder.get(convertView, R.id.wordname);
         TextView wordtime = BaseViewHolder.get(convertView, R.id.wordtime);
         TextView wordstatus = BaseViewHolder.get(convertView, R.id.wordstatus);
-        wordtitle.setText(title[position]);
-        wordname.setText("发起人："+name[position]);
-        wordtime.setText(time[position]);
-        wordstatus.setText(status[position]);
-        if (status[position].equals("确认收到")){
-            wordstatus.setBackgroundResource(imgs_0[0]);
-        }else {
-            wordstatus.setBackgroundResource(imgs_0[1]);
+        String[] time=list.get(position).getCreateTime().split(" ");
+        wordtitle.setText(list.get(position).getTitle());
+        wordname.setText("发起人："+list.get(position).getCreateUser().getUsername());
+        wordtime.setText(time[0]);
+        switch (list.get(position).getStatus()){
+            case 0:
+                wordstatus.setText(status[0]);
+                wordstatus.setBackgroundResource(imgs_0[0]);
+                break;
+            case 1:
+                wordstatus.setText(status[1]);
+                wordstatus.setBackgroundResource(imgs_0[1]);
+                break;
+            default:
+                wordstatus.setText("未知状态");
+                wordstatus.setBackgroundResource(imgs_0[0]);
+                break;
         }
-
         return convertView;
     }
 

@@ -19,18 +19,13 @@ import butterknife.OnClick;
 class BaseAppCompatActivity extends AppCompatActivity {
     @BindView(R.id.back)
     ImageButton back;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.back})
-    void click(View view){
-        switch (view.getId()){
-            case R.id.back:
-                finish();
-                break;
-        }
-    }
+
 }
