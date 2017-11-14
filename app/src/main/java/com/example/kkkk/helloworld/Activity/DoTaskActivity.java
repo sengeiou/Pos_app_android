@@ -31,6 +31,8 @@ import net.lemonsoft.lemonhello.LemonHelloView;
 import net.lemonsoft.lemonhello.interfaces.LemonHelloActionDelegate;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,8 +55,10 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
     AlertDialog alertDialog;
     Uri tempUri;
     Bitmap mBitmap;
-    Bitmap obmp;
+    List<String> list=new ArrayList<>();
     int log=-1;
+    int flog;
+    public String[] text_ = {"是否包装送纸", "是否培训", "是否包含故障排除","是否包含单面付", "主动换机", "被动换机","主动撤机","被动撤机"};
     public static final int CHOOSE_PICTURE = 0;
     public static final int TAKE_PICTURE = 1;
     public static final int CROP_SMALL_PRCIURE = 2;
@@ -76,6 +80,12 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 gridadapter.setSeclection(position);
                 gridadapter.notifyDataSetChanged();
+                if (flog!=position){
+                    list.add(text_[position]);
+                }else {
+                    list.remove(position);
+                }
+
             }
         });
     }

@@ -72,8 +72,7 @@ public class noreadFragment extends Fragment {
                                 Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
                                 return;
                             } else {
-                                JSONArray list_temp = JSON.parseArray(data);
-                                loadList(list_temp);
+                                loadList(data);
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -87,16 +86,21 @@ public class noreadFragment extends Fragment {
                     }
                 });
     }
-    private void loadList(JSONArray list){
-        final readGridAdapter gridadapter=new readGridAdapter(getContext(),list);
+    private void loadList(final String data){
+        final readGridAdapter gridadapter=new readGridAdapter(getContext(),data);
         gridView.setAdapter(gridadapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 gridadapter.setSeclection(position);
                 gridadapter.notifyDataSetChanged();
-                Toast.makeText(getContext(), "已读通告"+position, Toast.LENGTH_SHORT).show();
+                JSONObject data_ = JSON.parseObject(data);
+                String list =data_.getString("list");
+                JSONArray list_temp = JSON.parseArray(list);
+                JSONObject json = list_temp.getJSONObject(position);
+                //Toast.makeText(getContext(), "已读通告"+position, Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(getActivity(),noticedetailActivity.class);
+                intent.putExtra("uuid",json.getString("uuid"));
                 startActivity(intent);
 
             }

@@ -69,14 +69,11 @@ public class readFragment extends Fragment {
                             JSONObject jsonObject = JSON.parseObject(result);
                             String msg = jsonObject.getString("message");
                             String data = jsonObject.getString("data");
-                            JSONObject data_ = JSON.parseObject(data);
-                            String list =data_.getString("list");
                             if (jsonObject.getString("code").equals("failure")) {
                                 Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
                                 return;
                             } else {
-                                JSONArray list_temp = JSON.parseArray(list);
-                                loadList(list_temp);
+                                loadList(data);
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -90,16 +87,21 @@ public class readFragment extends Fragment {
                     }
                 });
     }
-    private void loadList(JSONArray list){
-        final readGridAdapter gridadapter=new readGridAdapter(getContext(),list);
+    private void loadList(final String data){
+        final readGridAdapter gridadapter=new readGridAdapter(getContext(),data);
         gridView.setAdapter(gridadapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 gridadapter.setSeclection(position);
                 gridadapter.notifyDataSetChanged();
-                Toast.makeText(getContext(), "已读通告"+position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "已读通告"+position, Toast.LENGTH_SHORT).show();
+                JSONObject data_ = JSON.parseObject(data);
+                String list =data_.getString("list");
+                JSONArray list_temp = JSON.parseArray(list);
+                JSONObject json = list_temp.getJSONObject(position);
                 Intent intent=new Intent(getActivity(),noticedetailActivity.class);
+                intent.putExtra("uuid",json.getString("uuid"));
                 startActivity(intent);
 
             }

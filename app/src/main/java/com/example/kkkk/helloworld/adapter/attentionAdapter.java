@@ -72,7 +72,7 @@ public class attentionAdapter extends BaseAdapter {
         TextView wordstatus = BaseViewHolder.get(convertView, R.id.wordstatus);
         String[] time=list.get(position).getCreateTime().split(" ");
         wordtitle.setText(list.get(position).getTitle());
-        wordname.setText("发起人："+list.get(position).getCreateUser().getUsername());
+        wordname.setText("发起人："+list.get(position).getCreateUser().getNickname());
         wordtime.setText(time[0]);
         switch (list.get(position).getStatus()){
             case 0:

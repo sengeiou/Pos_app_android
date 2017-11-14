@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    
+    <Button
+        android:id="@+id/btn_item"
+        android:layout_width="126.7dp"
+        android:layout_height="27.3dp"
+        android:text="是否包装送纸"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10.7dp"
+        android:background="@drawable/selector_bg_task"
+        android:textColor="@drawable/selector_textcolor_task"
+        android:textSize="14sp"
+        android:clickable="false"
+        android:focusable="false"/>
+</LinearLayout>

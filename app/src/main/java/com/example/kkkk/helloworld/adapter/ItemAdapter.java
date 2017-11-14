@@ -22,14 +22,13 @@ public class ItemAdapter extends BaseAdapter {
 
     final int itemLength = 8;
     private int clickTemp = -1;//标识被选择的item
-    private int[] clickedList=new int[itemLength];//这个数组用来存放item的点击状态
-
+    private int[] clickedList={0,0,0,0,0,0,0,0};//这个数组用来存放item的点击状态
     public ItemAdapter(Context mContext) {
         super();
         this.mContext = mContext;
-        for (int i =0;i<itemLength;i++){
-            clickedList[i]=0;      //初始化item点击状态的数组
-        }
+        //for (int i =0;i<itemLength;i++){
+        //    clickedList[i]=0;      //初始化item点击状态的数组
+        //}
     }
 
     public void setSeclection(int posiTion) {
@@ -62,16 +61,18 @@ public class ItemAdapter extends BaseAdapter {
         }
         TextView tv = BaseViewHolder.get(convertView, R.id.item);
         tv.setText(img_text_0[position]);
-        tv.setBackgroundResource(R.drawable.frame);
-        tv.setTextColor(mContext.getResources().getColor(R.color.textColor_2));
+        //tv.setBackgroundResource(R.drawable.frame);
+        //tv.setTextColor(mContext.getResources().getColor(R.color.textColor_2));
         if(clickTemp==position){
             if (clickedList[position]==0){
                 tv.setBackgroundResource(R.drawable.choose);
                 tv.setTextColor(mContext.getResources().getColor(R.color.textColor_1));
+                clickedList[position]=1;
             }
             else {
                 tv.setBackgroundResource(R.drawable.frame);
                 tv.setTextColor(mContext.getResources().getColor(R.color.textColor_2));
+                clickedList[position]=0;
             }
         }
 

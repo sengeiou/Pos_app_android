@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.example.kkkk.helloworld.BaseViewHolder;
 import com.example.kkkk.helloworld.R;
 
@@ -25,13 +28,19 @@ public class nowtaskAdapter extends BaseAdapter {
     final int itemLength = 4;
     private int clickTemp = -1;//标识被选择的item
     private int[] clickedList=new int[itemLength];//这个数组用来存放item的点击状态
-
-    public nowtaskAdapter(Context mContext) {
+    JSONObject json;
+    String data;
+    JSONArray list_temp;
+    public nowtaskAdapter(Context mContext, String data) {
         super();
         this.mContext = mContext;
         for (int i =0;i<itemLength;i++){
             clickedList[i]=0;      //初始化item点击状态的数组
         }
+        this.data=data;
+        JSONObject data_ = JSON.parseObject(data);
+        String list =data_.getString("list");
+        list_temp = JSON.parseArray(list);
     }
 
     public void setSeclection(int posiTion) {
@@ -66,16 +75,31 @@ public class nowtaskAdapter extends BaseAdapter {
         TextView wordcode = BaseViewHolder.get(convertView, R.id.code);
         TextView worduser = BaseViewHolder.get(convertView, R.id.user);
         TextView wordstatus = BaseViewHolder.get(convertView, R.id.status);
-        wordname.setText(name[position]);
-        wordcode.setText(code[position]);
-        worduser.setText(user[position]);
-        wordstatus.setText(status[position]);
-        if (status[position].equals("未开始")){
-            wordstatus.setBackgroundResource(imgs_0[1]);
-        }else if (status[position].equals("进行中")){
-            wordstatus.setBackgroundResource(imgs_0[0]);
-        }else {
-            wordstatus.setBackgroundResource(imgs_0[2]);
+        JSONObject json = list_temp.getJSONObject(position);
+        JSONObject user= JSON.parseObject(json.getString("createUser"));
+        JSONObject merchant= JSON.parseObject(json.getString("merchant"));
+
+        wordname.setText(json.getString("type"));
+        wordcode.setText(merchant.getString("machineCode"));
+        worduser.setText(user.getString("nickname"));
+        //wordstatus.setText(status[position]);
+        switch (json.getString("status")){
+            case "1":
+                wordstatus.setText(status[0]);
+                wordstatus.setBackgroundResource(imgs_0[0]);
+                break;
+            case "2":
+                wordstatus.setText(status[1]);
+                wordstatus.setBackgroundResource(imgs_0[1]);
+                break;
+            case "3":
+                wordstatus.setText(status[2]);
+                wordstatus.setBackgroundResource(imgs_0[2]);
+                break;
+            default:
+                wordstatus.setText("未知");
+                wordstatus.setBackgroundResource(imgs_0[1]);
+                break;
         }
 
         return convertView;

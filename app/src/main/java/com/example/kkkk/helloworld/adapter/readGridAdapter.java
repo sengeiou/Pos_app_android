@@ -8,9 +8,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.example.kkkk.helloworld.BaseViewHolder;
 import com.example.kkkk.helloworld.R;
+import com.example.kkkk.helloworld.model.bean.WarringMsg;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,18 +24,23 @@ import java.util.List;
 
 public class readGridAdapter extends BaseAdapter {
 
-        public String[] img_text_0 = {"签到", "通知公告", "今日任务"};
-        public int[] imgs_0= {R.drawable.picture, R.drawable.picture, R.drawable.picture};
+        //public String[] img_text_0 = {"签到", "通知公告", "今日任务"};
         private Context mContext;
-        JSONArray list = new JSONArray();
+        //JSONArray list = new JSONArray();
+        String data;
+        JSONArray list_temp;
         final int itemLength = 4;
+        JSONObject json;
         private int clickTemp = -1;//标识被选择的item
         private int[] clickedList=new int[itemLength];//这个数组用来存放item的点击状态
 
-    public readGridAdapter(Context mContext, JSONArray list) {
+    public readGridAdapter(Context mContext, String data) {
             super();
             this.mContext = mContext;
-            this.list=list;
+            this.data=data;
+            JSONObject data_ = JSON.parseObject(data);
+            String list =data_.getString("list");
+            list_temp = JSON.parseArray(list);
             for (int i =0;i<itemLength;i++){
                 clickedList[i]=0;      //初始化item点击状态的数组
             }
@@ -46,7 +54,7 @@ public class readGridAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return img_text_0.length;
+        return list_temp.size();
     }
 
     @Override
@@ -70,10 +78,14 @@ public class readGridAdapter extends BaseAdapter {
         TextView tvMessage = BaseViewHolder.get(convertView, R.id.message);
         TextView tvtime = BaseViewHolder.get(convertView, R.id.time);
         ImageView iv = BaseViewHolder.get(convertView, R.id.img);
-        iv.setBackgroundResource(imgs_0[position]);
-        tvTitle.setText(img_text_0[position]);
-        tvMessage.setText(img_text_0[position]);
-        tvtime.setText(img_text_0[position]);
+
+        json = list_temp.getJSONObject(position);
+        //JSONObject user= JSON.parseObject(json.getString("createUser"));
+
+        iv.setBackgroundResource(R.drawable.picture);
+        tvTitle.setText(json.getString("title"));
+        tvMessage.setText(json.getString("content"));
+        tvtime.setText(json.getString("createTime"));
         return convertView;
     }
 

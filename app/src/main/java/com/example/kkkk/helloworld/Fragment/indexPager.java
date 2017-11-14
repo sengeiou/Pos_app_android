@@ -109,15 +109,15 @@ public class indexPager extends Fragment {
                 aAdapter.setSeclection(position);
                 aAdapter.notifyDataSetChanged();
                 JSONObject json = warringList_temp.getJSONObject(position);
-                warringItem = new WarringMsg();
-                JSONObject user= JSON.parseObject(json.getString("createUser"));
+                //warringItem = new WarringMsg();
+                //JSONObject uuid= JSON.parseObject(json.getString("uuid"));
                 Intent intent=new Intent(getActivity(),noticedetailActivity.class);
-                Bundle bundle=new Bundle();
-                bundle.putString("usrname",user.getString("username"));
-                bundle.putString("title",json.getString("title"));
-                bundle.putString("content",json.getString("content"));
-                bundle.putString("time",json.getString("createTime"));
-                intent.putExtras(bundle);
+                //Bundle bundle=new Bundle();
+                //bundle.putString("usrname",user.getString("username"));
+                //bundle.putString("title",json.getString("title"));
+                //bundle.putString("content",json.getString("content"));
+                //bundle.putString("time",json.getString("createTime"));
+                intent.putExtra("uuid",json.getString("uuid"));
                 startActivity(intent);
 
             }

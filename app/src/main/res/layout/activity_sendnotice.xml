@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:textCursorDrawable="@null"
@@ -42,6 +43,7 @@
             android:layout_gravity="center"
             android:hint="请输入公告主题"/>
         <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="188.4dp"
             android:layout_marginTop="10.7dp"
@@ -52,7 +54,30 @@
             android:paddingLeft="10dp"
             android:gravity="start"
             android:hint="请输入公告内容"/>
+        <LinearLayout
+            android:layout_width="359.9dp"
+            android:layout_height="103.3dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="103.3dp"
+                android:layout_height="103.3dp"
+                android:layout_marginLeft="10.7dp"
+                android:layout_marginRight="14.3dp"/>
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="103.3dp"
+                android:layout_height="103.3dp"
+                android:layout_marginRight="14.3dp" />
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="103.3dp"
+                android:layout_height="103.3dp" />
+        </LinearLayout>
         <ImageView
+            android:id="@+id/set"
             android:layout_width="103.3dp"
             android:layout_height="103.3dp"
             android:layout_marginLeft="10.3dp"
