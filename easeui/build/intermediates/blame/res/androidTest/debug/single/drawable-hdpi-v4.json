@@ -160,12 +160,12 @@
         "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_03.png"
     },
     {
-        "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_06.png",
-        "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_06.png"
-    },
-    {
         "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_26.png",
         "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_26.png"
+    },
+    {
+        "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_06.png",
+        "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_06.png"
     },
     {
         "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_unread_count_bg.9.png",
@@ -176,12 +176,12 @@
         "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_29.png"
     },
     {
-        "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_07.png",
-        "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_07.png"
-    },
-    {
         "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_chatfrom_bg_normal.9.png",
         "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_chatfrom_bg_normal.9.png"
+    },
+    {
+        "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_07.png",
+        "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_07.png"
     },
     {
         "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_20.png",
@@ -492,12 +492,12 @@
         "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_18.png"
     },
     {
-        "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_8.png",
-        "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_8.png"
-    },
-    {
         "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_11.png",
         "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ease_record_animate_11.png"
+    },
+    {
+        "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ee_8.png",
+        "source": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\bundles\\debug\\res\\drawable-hdpi-v4\\ee_8.png"
     },
     {
         "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-hdpi-v4\\ease_record_animate_14.png",
