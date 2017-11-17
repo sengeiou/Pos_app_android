@@ -18,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class noticeActivity extends AppCompatActivity {
+public class noticeActivity extends BaseAppActivity {
 
     private TabLayout mTabLayout;
     private ViewPager mViewPager;

@@ -12,12 +12,12 @@
         "source": "D:\\EASEUI3\\HelloWorld\\easeui\\src\\main\\res\\drawable-hdpi\\ease_chatfrom_voice_playing_f1.png"
     },
     {
-        "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ee_1.png",
-        "source": "D:\\EASEUI3\\HelloWorld\\easeui\\src\\main\\res\\drawable-hdpi\\ee_1.png"
-    },
-    {
         "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\57aedce406ae00d3009e404f1af8e952eba2a784\\output\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ee_1.png",
+        "source": "D:\\EASEUI3\\HelloWorld\\easeui\\src\\main\\res\\drawable-hdpi\\ee_1.png"
     },
     {
         "merged": "D:\\EASEUI3\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ease_dx_checkbox_gray_on.png",

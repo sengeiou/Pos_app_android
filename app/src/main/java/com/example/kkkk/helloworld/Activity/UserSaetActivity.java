@@ -27,7 +27,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class UserSaetActivity extends AppCompatActivity implements AMap.OnMapClickListener, AMap.OnMarkerClickListener,
+public class UserSaetActivity extends BaseAppActivity implements AMap.OnMapClickListener, AMap.OnMarkerClickListener,
         AMap.InfoWindowAdapter {
     MapView mMapView = null;
     //设置希望展示的地图缩放级别

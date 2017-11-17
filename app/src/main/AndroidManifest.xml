@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.kkkk.helloworld">
-    <!--用于访问GPS定位-->
+
+    <!-- 用于访问GPS定位 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!--读取缓存数据-->
+    <!-- 读取缓存数据 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 更改设置 -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <!--这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
     <!-- 请求网络 -->
@@ -29,9 +30,11 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -39,7 +42,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppBaseTheme">
         <activity android:name=".Activity.SplashActiivty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,54 +51,33 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.loginActivity" />
+        <activity android:name=".Activity.loginActivity"></activity>
         <activity android:name=".Activity.findpwdActivity" />
-        <activity android:name=".Activity.userinfoActivity">
-
-        </activity>
+        <activity android:name=".Activity.userinfoActivity"></activity>
         <activity android:name=".Activity.settingActivity" />
         <activity android:name=".Activity.noticeActivity" />
         <activity android:name=".Activity.noticedetailActivity" />
         <activity android:name=".Activity.sendnoticeActivity" />
         <activity android:name=".Activity.NowTaskActivity" />
         <activity android:name=".Activity.TaskDetailActivity" />
-        <activity android:name=".Activity.DoTaskActivity"></activity>
-        <activity android:name=".Activity.UserSaetActivity"></activity>
+        <activity android:name=".Activity.DoTaskActivity">
+
+        </activity>
+        <activity android:name=".Activity.UserSaetActivity" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="d1ae7a0bdb8465e930f8072c50f5c2af">
+            android:value="d1ae7a0bdb8465e930f8072c50f5c2af"></meta-data>
 
-        </meta-data>
-
-        <activity android:name=".Activity.SignInActivity">
-
-        </activity>
-
-        <activity android:name=".Activity.BaseActivity">
-
-        </activity>
-        <activity android:name=".Activity.ChatActivity">
-
-        </activity>
-        <activity android:name=".Activity.ContextMenuActivity">
-
-        </activity>
-        <activity android:name=".Activity.ImageGridActivity">
-
-        </activity>
-        <activity android:name=".Activity.RecorderVideoActivity">
-
-        </activity>
-        <activity android:name=".Activity.CallActivity">
-
-        </activity>
-        <activity android:name=".Activity.VoiceCallActivity">
-
-        </activity>
-        <activity android:name=".Activity.VideoCallActivity">
-
-        </activity>
+        <activity android:name=".Activity.SignInActivity"></activity>
+        <activity android:name=".Activity.BaseActivity"></activity>
+        <activity android:name=".Activity.ChatActivity"></activity>
+        <activity android:name=".Activity.ContextMenuActivity"></activity>
+        <activity android:name=".Activity.ImageGridActivity"></activity>
+        <activity android:name=".Activity.RecorderVideoActivity"></activity>
+        <activity android:name=".Activity.CallActivity"></activity>
+        <activity android:name=".Activity.VoiceCallActivity"></activity>
+        <activity android:name=".Activity.VideoCallActivity"></activity>
         <!-- 显示下载大图页面 -->
         <activity
             android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
@@ -106,9 +88,24 @@
             android:name="com.hyphenate.easeui.ui.EaseShowNormalFileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/horizontal_slide" />
-        <!-- 定位需要的服务 -->
-        <service android:name="com.amap.api.location.APSService" >
+
+        <service
+            android:name=".location.LocationService"
+            android:process=":remote1">
+            <intent-filter>
+                <action android:name="com.example.kkkk.helloworld.location.LocationService"></action>
+            </intent-filter>
         </service>
+        <service
+            android:name=".location.LocationHelperService"
+            android:process=":remote2">
+            <intent-filter>
+                <action android:name="com.example.kkkk.helloworld.location.LocationHelperService"></action>
+            </intent-filter>
+        </service>
+
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService"></service>
 
         <!-- 开机自启动服务 -->
         <receiver android:name=".receiver.StartServiceReceiver">
@@ -123,7 +120,7 @@
         <!-- 设置环信应用的appkey -->
         <meta-data
             android:name="EASEMOB_APPKEY"
-            android:value="easemob-demo#chatdemoui" /><!--1151171113178172#whywxt-->
+            android:value="easemob-demo#chatdemoui" /> <!-- 1151171113178172#whywxt -->
         <!-- 声明sdk所需的service -->
         <service
             android:name="com.hyphenate.chat.EMChatService"
@@ -147,6 +144,8 @@
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".Activity.BaseAppActivity"></activity>
     </application>
 
 </manifest>

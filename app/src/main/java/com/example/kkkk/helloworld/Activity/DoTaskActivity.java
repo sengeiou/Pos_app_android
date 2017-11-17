@@ -1,5 +1,6 @@
 package com.example.kkkk.helloworld.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -9,20 +10,31 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import com.alibaba.fastjson.JSONArray;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.example.kkkk.helloworld.App;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.ItemAdapter;
+import com.example.kkkk.helloworld.http.RetrofitHttp;
+import com.example.kkkk.helloworld.location.PositionInfo;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import net.lemonsoft.lemonhello.LemonHello;
 import net.lemonsoft.lemonhello.LemonHelloAction;
@@ -31,14 +43,24 @@ import net.lemonsoft.lemonhello.LemonHelloView;
 import net.lemonsoft.lemonhello.interfaces.LemonHelloActionDelegate;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.OkHttpClient;
+import okhttp3.RequestBody;
+import okhttp3.ResponseBody;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-public class DoTaskActivity extends AppCompatActivity implements View.OnClickListener {
+public class DoTaskActivity extends BaseAppActivity implements View.OnClickListener {
 
     TextView btntest;
     MyGridView gridView;
@@ -52,16 +74,43 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
     ImageView img3;
     @BindView(R.id.setimg)
     ImageView setimg;
+    @BindView(R.id.btn_commit)
+    TextView btnCommit;
     AlertDialog alertDialog;
     Uri tempUri;
     Bitmap mBitmap;
-    List<String> list=new ArrayList<>();
-    int log=-1;
-    int flog;
-    public String[] text_ = {"是否包装送纸", "是否培训", "是否包含故障排除","是否包含单面付", "主动换机", "被动换机","主动撤机","被动撤机"};
+    ProgressDialog mDialog;
+    String uuid;
+    List<String> list = new ArrayList<>();
+    List<File> fileList = new ArrayList<>();
+    ArrayList<Uri> imgList = new ArrayList<>();
+    List<MultipartBody.Part> partList;
+    StringBuilder items;
+    int log = -1;
+    int flog = -1;
+    public String[] text_ = {"是否包装送纸", "是否培训", "是否包含故障排除", "是否包含单面付", "主动换机", "被动换机", "主动撤机", "被动撤机"};
     public static final int CHOOSE_PICTURE = 0;
     public static final int TAKE_PICTURE = 1;
     public static final int CROP_SMALL_PRCIURE = 2;
+    @BindView(R.id.messageMoney)
+    EditText messageMoney;
+    @BindView(R.id.radiogroup1)
+    RadioGroup radiogroup1;
+    String btn1Text;
+    @BindView(R.id.money)
+    EditText money;
+    @BindView(R.id.radiogroup2)
+    RadioGroup radiogroup2;
+    String btn2Text;
+    @BindView(R.id.btn_collect)
+    Button btnCollect;
+    @BindView(R.id.remark)
+    MaterialEditText remark;
+    RadioButton rb;
+
+    String address_;
+    JSONArray latlng;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +122,17 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void initView() {
+        Intent intent = getIntent();
+        uuid = intent.getStringExtra("uuid");
+        address_=intent.getStringExtra("address");
+        latlng=JSON.parseArray(intent.getStringExtra("latlng"));
+        items =new StringBuilder();
+        mDialog = new ProgressDialog(DoTaskActivity.this);
+        mDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mDialog.setMessage("请稍等");
+        mDialog.setIndeterminate(false);
+        // 设置ProgressDialog 是否可以按退回按键取消
+        mDialog.setCancelable(true);
         final ItemAdapter gridadapter = new ItemAdapter(this);
         gridView.setAdapter(gridadapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -80,60 +140,79 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 gridadapter.setSeclection(position);
                 gridadapter.notifyDataSetChanged();
-                if (flog!=position){
+                if (flog != position) {
                     list.add(text_[position]);
-                }else {
+                    flog = position;
+                } else {
                     list.remove(position);
                 }
-
+            }
+        });
+        radiogroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                selectRadioButton(1);
+            }
+        });
+        radiogroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                selectRadioButton(2);
             }
         });
     }
 
-    @OnClick({R.id.back,R.id.setimg,R.id.img1,R.id.img2,R.id.img3})
+    @OnClick({R.id.back, R.id.setimg, R.id.img1, R.id.img2, R.id.img3, R.id.btn_commit,R.id.btn_collect})
     void click(View v) {
         switch (v.getId()) {
             case R.id.back:
                 finish();
                 break;
             case R.id.setimg:
-                if (img1.getDrawable() == null){
-                    log=1;
-                }else if (img2.getDrawable()==null){
-                    log=2;
-                } else if (img3.getDrawable()==null){
-                    log=3;
+                if (img1.getDrawable() == null) {
+                    log = 1;
+                } else if (img2.getDrawable() == null) {
+                    log = 2;
+                } else if (img3.getDrawable() == null) {
+                    log = 3;
                 }
-                if (log>3){
+                if (log > 3) {
                     Toast.makeText(this, "最多上传三张照片", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 showChoosePicDialog();
                 break;
             case R.id.img1:
-                if (img1.getDrawable() == null){
+                if (img1.getDrawable() == null) {
                     return;
                 }
                 showDialog(img1);
                 break;
             case R.id.img2:
-                if (img2.getDrawable() == null){
+                if (img2.getDrawable() == null) {
                     return;
                 }
                 showDialog(img2);
                 break;
             case R.id.img3:
-                if (img3.getDrawable() == null){
+                if (img3.getDrawable() == null) {
                     return;
                 }
                 showDialog(img3);
+                break;
+            case R.id.btn_commit:
+                DoTask(setItems(list),messageMoney.getText().toString(),btn1Text,money.getText().toString(),btn1Text,remark.getText().toString());
+                break;
+            case R.id.btn_collect:
+                getMerchantCollect(uuid);
                 break;
             default:
                 break;
         }
     }
+
     protected void showChoosePicDialog() {
-        alertDialog  = new AlertDialog.Builder(DoTaskActivity.this).create();
+        alertDialog = new AlertDialog.Builder(DoTaskActivity.this).create();
         alertDialog.show();
         Window window = alertDialog.getWindow();
         window.setContentView(R.layout.dialog_sex);
@@ -152,7 +231,7 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.sex1:
                 Intent openAlbumIntent = new Intent(Intent.ACTION_GET_CONTENT);
                 openAlbumIntent.setType("image/*");
@@ -169,6 +248,7 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
+
     /**
      * 裁剪图片
      */
@@ -177,6 +257,7 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
             Log.i("err", "cutImage: ");
         }
         tempUri = uri;
+        imgList.add(uri);
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
@@ -197,7 +278,7 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
         Bundle extras = data.getExtras();
         if (extras != null) {
             mBitmap = extras.getParcelable("data");
-            switch (log){
+            switch (log) {
                 case 1:
                     img1.setImageBitmap(mBitmap);
                     break;
@@ -206,7 +287,7 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
                     break;
                 case 3:
                     img3.setImageBitmap(mBitmap);
-                    log=4;
+                    log = 4;
                     break;
             }
         }
@@ -215,8 +296,8 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode==userinfoActivity.RESULT_OK){
-            switch (requestCode){
+        if (resultCode == userinfoActivity.RESULT_OK) {
+            switch (requestCode) {
                 case TAKE_PICTURE:
                     cutImage(tempUri);
                     break;
@@ -262,5 +343,129 @@ public class DoTaskActivity extends AppCompatActivity implements View.OnClickLis
                     }
                 }))
                 .show(DoTaskActivity.this);
+    }
+
+    //做任务
+    private void DoTask(String items, String messageMoney, String messageMoneyType, String money, String moneyType, String remark) {
+        mDialog.show();
+        Map<String, RequestBody> params = new HashMap<>();
+        //以下参数是伪代码，参数需要换成自己服务器支持的
+        params.put("uuid", convertToRequestBody("uuid"));
+        params.put("items", convertToRequestBody(items));
+        params.put("messageMoney", convertToRequestBody(messageMoney));
+        params.put("messageMoneyType", convertToRequestBody(messageMoneyType));
+        params.put("money", convertToRequestBody(money));
+        params.put("moneyType", convertToRequestBody(moneyType));
+        params.put("remark", convertToRequestBody(remark));
+
+        for (int i = 0; i < imgList.size(); i++) {
+            fileList.add(new File(String.valueOf(imgList.get(i))));
+
+            partList = filesToMultipartBodyParts(fileList);
+        }
+
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        RetrofitHttp.getRetrofit(builder.build()).DoTask(App.getInstance().getMyToken(), params, partList)
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Response<ResponseBody> response) {
+                        mDialog.dismiss();
+                        try {
+                            String result = response.body().string();
+                            JSONObject jsonObject = JSON.parseObject(result);
+                            String msg = jsonObject.getString("message");
+                            //String data = jsonObject.getString("data");
+                            Toast.makeText(getBaseContext(), msg, Toast.LENGTH_SHORT).show();
+                            finish();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        mDialog.dismiss();
+                        Toast.makeText(getBaseContext(), "未知错误", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    //采集商户数据
+    private void getMerchantCollect(String uuid){
+        mDialog.show();
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        RetrofitHttp.getRetrofit(builder.build()).merchantCollect(uuid,getJsonStr(address_,latlng.getString(0),latlng.getString(0)))
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Response<ResponseBody> response) {
+                        mDialog.dismiss();
+                        try {
+                            String result = response.body().string();
+                            JSONObject jsonObject = JSON.parseObject(result);
+                            String msg = jsonObject.getString("message");
+                            String data = jsonObject.getString("data");
+                            Toast.makeText(getBaseContext(), msg, Toast.LENGTH_SHORT).show();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        mDialog.dismiss();
+                        Toast.makeText(getBaseContext(), "未知错误", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    private RequestBody getJsonStr(String lat,String lng,String address) {
+
+        JSONObject object = new JSONObject();
+        object.put("lat", lat);
+        object.put("lng", lng);
+        object.put("address", address);
+        RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), object.toJSONString());
+        return body;
+    }
+
+    private RequestBody convertToRequestBody(String param) {
+        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), param);
+        return requestBody;
+    }
+
+    private List<MultipartBody.Part> filesToMultipartBodyParts(List<File> files) {
+        List<MultipartBody.Part> parts = new ArrayList<>(files.size());
+        for (File file : files) {
+            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+            MultipartBody.Part part = MultipartBody.Part.createFormData("images", file.getName(), requestBody);
+            parts.add(part);
+        }
+        return parts;
+    }
+
+    private String setItems(List<String> list) {
+        items.delete(0,items.length());
+        for (int i = 0; i < list.size(); i++) {
+            if (i == list.size() - 1) {//当循环到最后一个的时候 就不添加逗号
+                items.append(list.get(i));
+            } else {
+                items.append(list.get(i));
+                items.append(",");
+            }
+        }
+        return items.toString();
+    }
+
+    private void selectRadioButton(int flog) {//通过radioGroup.getCheckedRadioButtonId()来得到选中的RadioButton的ID，从而得到RadioButton进而获取选中值
+        switch (flog){
+            case 1:
+                rb = (RadioButton)DoTaskActivity.this.findViewById(radiogroup1.getCheckedRadioButtonId());
+                btn1Text=rb.getText().toString();
+                break;
+            case 2:
+                rb = (RadioButton)DoTaskActivity.this.findViewById(radiogroup2.getCheckedRadioButtonId());
+                btn2Text=rb.getText().toString();
+                break;
+        }
     }
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
@@ -29,10 +30,12 @@ import okhttp3.ResponseBody;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NowTaskActivity extends AppCompatActivity {
+public class NowTaskActivity extends BaseAppActivity {
     GridView gridView;
     @BindView(R.id.back)
     ImageButton back;
+    @BindView(R.id.errorview)
+    TextView errorview;
     private ProgressDialog mDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,12 +79,17 @@ public class NowTaskActivity extends AppCompatActivity {
                             String result = response.body().string();
                             JSONObject jsonObject = JSON.parseObject(result);
                             String msg = jsonObject.getString("message");
-                            String data = jsonObject.getString("data");
+                            String data_ = jsonObject.getString("data");
+                            JSONObject data = JSON.parseObject(data_);
                             if (jsonObject.getString("code").equals("failure")) {
                                 Toast.makeText(getBaseContext(), msg, Toast.LENGTH_SHORT).show();
                                 return;
                             } else {
-                                loadList(data);
+                                if (data.getString("list").equals("[]")){
+                                    errorview.setVisibility(View.VISIBLE);
+                                }else {
+                                    loadList(data_);
+                                }
                             }
                         } catch (IOException e) {
                             e.printStackTrace();

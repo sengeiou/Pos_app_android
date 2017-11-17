@@ -53,7 +53,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class sendnoticeActivity extends AppCompatActivity implements View.OnClickListener {
+public class sendnoticeActivity extends BaseAppActivity implements View.OnClickListener {
     @BindView(R.id.back)
     ImageButton back;
     @BindView(R.id.sendnotice)

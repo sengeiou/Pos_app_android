@@ -57,7 +57,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
-public class RecorderVideoActivity extends BaseActivity implements
+public class RecorderVideoActivity extends BaseAppActivity implements
 		OnClickListener, SurfaceHolder.Callback, OnErrorListener,
 		OnInfoListener {
 	private static final String TAG = "RecorderVideoActivity";

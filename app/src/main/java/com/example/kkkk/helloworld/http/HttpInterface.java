@@ -107,4 +107,33 @@ public interface HttpInterface {
     @Headers({"Content-Type:application/json", "Accept:application/json"})
     @POST("task/info/{uuid}")
     Call<ResponseBody> TaskDetail(@Path("uuid") String uuid);
+
+    /**
+     * 做任务
+     *
+     * @return
+     */
+    @Headers({"Content-Type:application/json", "Accept:application/json"})
+    @Multipart
+    @POST("task/do")
+    Call<ResponseBody> DoTask(@Header("USER-TOKEN") String token,@PartMap Map<String, RequestBody> map,@Part("images") List<MultipartBody.Part> parts);
+
+    /**
+     * 上报位置信息
+     *
+     * @return
+     */
+    @Headers({"Content-Type:application/json", "Accept:application/json"})
+    @POST("user/gps/collect")
+    Call<ResponseBody> uploadAddr(@Header("USER-TOKEN") String token,@Body RequestBody requestBody);
+
+    /*
+    * 商户位置采集
+    *
+    */
+    @Headers({"Content-Type:application/json", "Accept:application/json"})
+    @POST("merchant/collect/{uuid}")
+    Call<ResponseBody> merchantCollect(@Path("uuid") String uuid,@Body RequestBody requestBody);
+
+
 }

@@ -17,6 +17,15 @@
             android:layout_centerHorizontal="true"
             android:text="今日任务" />
     </RelativeLayout>
+    <TextView
+        android:id="@+id/errorview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="暂时没有任务"
+        android:textSize="20dp"
+        android:textColor="@color/textColor_2"
+        android:gravity="center"
+        android:visibility="gone"/>
     <GridView
         android:id="@+id/grid_nowtask"
         android:layout_width="match_parent"

@@ -28,7 +28,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TaskDetailActivity extends AppCompatActivity {
+public class TaskDetailActivity extends BaseAppActivity {
 
     @BindView(R.id.roll_view_pager)
     RollPagerView rollViewPager;
@@ -56,6 +56,8 @@ public class TaskDetailActivity extends AppCompatActivity {
     String uuid;
     ProgressDialog mDialog;
     public String[] status_0 = {"未开始", "进行中","审核通过"};
+    String address_;
+    String latlng_;
     public int[] imgs_0= {R.drawable.status_bg_green, R.drawable.status_bg_orange,R.drawable.status_bg_blue};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +107,9 @@ public class TaskDetailActivity extends AppCompatActivity {
                 break;
             case R.id.btn_do:
                 Intent intent = new Intent(TaskDetailActivity.this, DoTaskActivity.class);
+                intent.putExtra("uuid",uuid);
+                intent.putExtra("address",address_);
+                intent.putExtra("latlng",latlng_);
                 startActivity(intent);
                 break;
             default:
@@ -139,6 +144,11 @@ public class TaskDetailActivity extends AppCompatActivity {
                                 address.setText(merchant.getString("address"));
                                 name.setText(merchant.getString("linkerName"));
                                 mobile.setText(merchant.getString("linkerMobile"));
+
+                                JSONObject locationInfo_ = JSON.parseObject(merchant.getString("locationInfo"));
+                                String coordinates_=locationInfo_.getString("coordinates");
+                                address_=merchant.getString("address");
+                                latlng_=coordinates_;
                             }
                         } catch (IOException e) {
                             e.printStackTrace();

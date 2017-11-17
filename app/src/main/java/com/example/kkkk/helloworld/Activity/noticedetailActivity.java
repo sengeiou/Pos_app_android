@@ -25,7 +25,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class noticedetailActivity extends AppCompatActivity {
+public class noticedetailActivity extends BaseAppActivity {
     @BindView(R.id.back)
     ImageButton back;
     @BindView(R.id.name)

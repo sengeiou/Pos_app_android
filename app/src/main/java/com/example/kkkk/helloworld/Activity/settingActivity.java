@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.kkkk.helloworld.R;
 
-public class settingActivity extends AppCompatActivity {
+public class settingActivity extends BaseAppActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

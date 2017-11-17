@@ -37,7 +37,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class userinfoActivity extends AppCompatActivity implements View.OnClickListener {
+public class userinfoActivity extends BaseAppActivity implements View.OnClickListener {
     public static final String BROADCAST_ACTION_AGE = "com.example.kkk.age";
     public static final String BROADCAST_ACTION_NAME = "com.example.kkk.name";
     public static final String BROADCAST_ACTION_SEX = "com.example.kkk.sex";
