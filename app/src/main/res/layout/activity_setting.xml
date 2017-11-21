@@ -102,7 +102,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_cancellogin"
                 android:layout_width="338.7dp"
                 android:layout_height="42.7dp"
                 android:layout_marginLeft="10dip"

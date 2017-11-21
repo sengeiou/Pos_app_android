@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.kkkk.helloworld.Activity.NowTaskActivity;
 import com.example.kkkk.helloworld.Activity.SignInActivity;
+import com.example.kkkk.helloworld.Activity.StaffInfoActivity;
 import com.example.kkkk.helloworld.Activity.noticeActivity;
 import com.example.kkkk.helloworld.Activity.noticedetailActivity;
 import com.example.kkkk.helloworld.adapter.GridViewAdapter;
@@ -26,7 +27,7 @@ import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.IndexGridAdapter;
 import com.example.kkkk.helloworld.adapter.attentionAdapter;
 import com.example.kkkk.helloworld.http.RetrofitHttp;
-import com.example.kkkk.helloworld.model.bean.WarringMsg;
+import com.example.kkkk.helloworld.location.WarringMsg;
 import com.example.kkkk.helloworld.starItem;
 
 import java.io.IOException;
@@ -127,21 +128,6 @@ public class indexPager extends Fragment {
 
     }
 
-    /**设置数据*/
-    private void setData() {
-        item = new starItem();
-        item.setStaffName("小王");
-        starList.add(item);
-        item = new starItem();
-        item.setStaffName("大王");
-        starList.add(item);
-        item = new starItem();
-        item.setStaffName("老王");
-        starList.add(item);
-        starList.addAll(starList);
-
-    }
-
     /**设置GirdView参数，绑定数据*/
     private void setGridView(List<starItem> starList) {
         int size = starList.size();
@@ -163,6 +149,13 @@ public class indexPager extends Fragment {
 
         adapter = new GridViewAdapter(getContext(), starList);
         gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getContext(), StaffInfoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void getStarStaff(){

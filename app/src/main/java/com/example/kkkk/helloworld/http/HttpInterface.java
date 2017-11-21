@@ -67,7 +67,7 @@ public interface HttpInterface {
      */
     @Headers({"Content-Type:application/json", "Accept:application/json"})
     @GET("note/list")
-    Call<ResponseBody> ReadList(@Header("USER-TOKEN") String token,@Query("isRead") String isRead);
+    Call<ResponseBody> ReadList(@Header("USER-TOKEN") String token,@Query("isRead") String isRead,@Query("page") int page,@Query("size") int size);
 
     /**
      * 通知公告详情

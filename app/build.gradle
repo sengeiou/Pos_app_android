@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.2'
     defaultConfig {
         applicationId "com.example.kkkk.helloworld"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -36,10 +36,19 @@ dependencies {
     compile files('libs/AMap_Search_V5.0.0_20170309.jar')
     compile files('libs/AMap_Location_V3.3.0_20170118.jar')
     compile files('libs/Android_Map3D_SDK_V5.4.0_20170928.jar')
-    compile 'de.hdodenhof:circleimageview:2.1.0'
     compile project(':easeui')
-    compile 'com.android.support:multidex:1.0.1'
     compile files('libs/umeng-analytics-v5.2.4.jar')
+    //compile 'com.facebook.fresco:fresco:0.10.0'
+    compile('com.facebook.fresco:fresco:0.10.0') {
+        exclude group: 'com.parse.bolts',
+                module: 'bolts-android'
+    }
+
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
+    compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.android.support:design:25.3.1'
@@ -48,18 +57,11 @@ dependencies {
     compile 'com.jude:fitsystemwindowlayout:2.1.5'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
     compile 'com.jakewharton:butterknife:8.8.1'
-    compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.jude:easyrecyclerview:3.5.7'
     compile 'com.alibaba:fastjson:1.2.24'
     compile 'com.jude:rollviewpager:1.2.9'
     compile 'cn.carbswang.android:NumberPickerView:1.0.2'
     compile 'com.jude:utils:1.2.1'
-    //compile 'com.facebook.fresco:fresco:0.10.0'
-    compile('com.facebook.fresco:fresco:0.10.0') {
-        exclude group: 'com.parse.bolts',
-                module: 'bolts-android'
-    }
-    compile 'com.github.1em0nsOft:LemonHello4Android:1.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
     compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta3'
@@ -67,5 +69,6 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.0.0-RC1'
     compile 'com.github.recruit-lifestyle:WaveSwipeRefreshLayout:1.6'
     compile 'com.parse:parse-android:1.13.1'
+    compile 'com.jwenfeng.pulltorefresh:library:1.0.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

@@ -91,6 +91,7 @@
         android:background="@color/text_while"
         android:layout_marginTop="10.7dp">
         <TextView
+            android:id="@+id/workOrder"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:textSize="14sp"
@@ -109,6 +110,7 @@
             android:src="@drawable/enter_line"
             />
         <TextView
+            android:id="@+id/wordReport"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:textSize="14sp"
@@ -128,6 +130,7 @@
         android:background="@color/text_while"
         android:layout_marginTop="10.7dp">
         <TextView
+            android:id="@+id/myTrack"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:textSize="14sp"
@@ -146,6 +149,7 @@
             android:src="@drawable/enter_line"
             />
         <TextView
+            android:id="@+id/myNotice"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:textSize="14sp"

@@ -3,31 +3,53 @@ package com.example.kkkk.helloworld.location;
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2017/11/17.
+ * Created by mac on 2017/5/3.
+ * 位置信息
  */
 
 public class PositionInfo implements Serializable {
-    private double lat;
-    private double lng;
+    private String deviceID;
+    private double latitude;
+    private double longitude;
     private double accuracy;
-    private String name;
+    private float angle;
+    private String province;
+    private String city;
+    private String district;
     private String address;
-    private String locType;
+    private String poiName;
+    private String timestamp;
 
-    public double getLat() {
-        return lat;
+    public String getDeviceID() {
+        return deviceID;
     }
 
-    public void setLat(double lat) {
-        this.lat = lat;
+    public void setDeviceID(String deviceID) {
+        this.deviceID = deviceID;
     }
 
-    public double getLng() {
-        return lng;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setLng(double lng) {
-        this.lng = lng;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getAngle() {
+        return angle;
+    }
+
+    public void setAngle(float angle) {
+        this.angle = angle;
     }
 
     public double getAccuracy() {
@@ -38,12 +60,28 @@ public class PositionInfo implements Serializable {
         this.accuracy = accuracy;
     }
 
-    public String getName() {
-        return name;
+    public String getCity() {
+        return city;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
     }
 
     public String getAddress() {
@@ -54,11 +92,19 @@ public class PositionInfo implements Serializable {
         this.address = address;
     }
 
-    public String getLocType() {
-        return locType;
+    public String getPoiName() {
+        return poiName;
     }
 
-    public void setLocType(String locType) {
-        this.locType = locType;
+    public void setPoiName(String poiName) {
+        this.poiName = poiName;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }

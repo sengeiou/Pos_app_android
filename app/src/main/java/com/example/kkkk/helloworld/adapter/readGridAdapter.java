@@ -8,14 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.kkkk.helloworld.BaseViewHolder;
 import com.example.kkkk.helloworld.R;
-import com.example.kkkk.helloworld.model.bean.WarringMsg;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,16 +28,17 @@ public class readGridAdapter extends BaseAdapter {
         JSONArray list_temp;
         final int itemLength = 4;
         JSONObject json;
+        List<JSONObject> list;
         private int clickTemp = -1;//标识被选择的item
         private int[] clickedList=new int[itemLength];//这个数组用来存放item的点击状态
 
-    public readGridAdapter(Context mContext, String data) {
+    public readGridAdapter(Context mContext, List<JSONObject> list) {
             super();
             this.mContext = mContext;
-            this.data=data;
-            JSONObject data_ = JSON.parseObject(data);
-            String list =data_.getString("list");
-            list_temp = JSON.parseArray(list);
+            this.list=list;
+            //JSONObject data_ = JSON.parseObject(data);
+            //String list =data_.getString("list");
+            //list_temp = JSON.parseArray(list);
             for (int i =0;i<itemLength;i++){
                 clickedList[i]=0;      //初始化item点击状态的数组
             }
@@ -54,7 +52,7 @@ public class readGridAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return list_temp.size();
+        return list.size();
     }
 
     @Override
@@ -79,13 +77,13 @@ public class readGridAdapter extends BaseAdapter {
         TextView tvtime = BaseViewHolder.get(convertView, R.id.time);
         ImageView iv = BaseViewHolder.get(convertView, R.id.img);
 
-        json = list_temp.getJSONObject(position);
-        //JSONObject user= JSON.parseObject(json.getString("createUser"));
+        final JSONObject bean = list.get(position);
+
 
         iv.setBackgroundResource(R.drawable.picture);
-        tvTitle.setText(json.getString("title"));
-        tvMessage.setText(json.getString("content"));
-        tvtime.setText(json.getString("createTime"));
+        tvTitle.setText(bean.getString("title"));
+        tvMessage.setText(bean.getString("content"));
+        tvtime.setText(bean.getString("createTime"));
         return convertView;
     }
 

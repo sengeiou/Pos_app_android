@@ -54,6 +54,7 @@ public class TaskDetailActivity extends BaseAppActivity {
     @BindView(R.id.back)
     ImageButton back;
     String uuid;
+    String merchantUuid;
     ProgressDialog mDialog;
     public String[] status_0 = {"未开始", "进行中","审核通过"};
     String address_;
@@ -107,7 +108,7 @@ public class TaskDetailActivity extends BaseAppActivity {
                 break;
             case R.id.btn_do:
                 Intent intent = new Intent(TaskDetailActivity.this, DoTaskActivity.class);
-                intent.putExtra("uuid",uuid);
+                intent.putExtra("merchantUuid",merchantUuid);
                 intent.putExtra("address",address_);
                 intent.putExtra("latlng",latlng_);
                 startActivity(intent);
@@ -144,6 +145,7 @@ public class TaskDetailActivity extends BaseAppActivity {
                                 address.setText(merchant.getString("address"));
                                 name.setText(merchant.getString("linkerName"));
                                 mobile.setText(merchant.getString("linkerMobile"));
+                                merchantUuid=merchant.getString("uuid");
 
                                 JSONObject locationInfo_ = JSON.parseObject(merchant.getString("locationInfo"));
                                 String coordinates_=locationInfo_.getString("coordinates");

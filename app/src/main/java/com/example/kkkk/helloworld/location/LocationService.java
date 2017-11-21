@@ -83,7 +83,7 @@ public class LocationService extends NotiService {
         mLocationOption.setOnceLocation(false);
         mLocationOption.setLocationCacheEnable(false);
         // 每10秒定位一次
-        mLocationOption.setInterval(10 * 1000);
+        mLocationOption.setInterval(30 * 1000);
         // 地址信息
         mLocationOption.setNeedAddress(true);
         mLocationClient.setLocationOption(mLocationOption);
@@ -131,7 +131,7 @@ public class LocationService extends NotiService {
                 mIntent.putExtra("result", sb.toString());
             } else {
                 sb.append(Utils.getLocationStr(aMapLocation));
-                PositionInfo info = new PositionInfo();
+                AddressInfo info = new AddressInfo();
                 info.setLat(aMapLocation.getLatitude());
                 info.setLng(aMapLocation.getLongitude());
                 info.setName(aMapLocation.getPoiName());

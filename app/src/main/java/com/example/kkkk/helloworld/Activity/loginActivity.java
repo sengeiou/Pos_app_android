@@ -54,7 +54,7 @@ public class loginActivity extends AppCompatActivity {
     MaterialEditText username;
     @BindView(R.id.password)
     MaterialEditText password;
-    private boolean isRemenber = false;
+    private boolean isRemenber = true;
     private ProgressDialog mDialog;
     private static final String TAG = "LoginActivity";
 
@@ -70,6 +70,7 @@ public class loginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         initView();
+       String s= System.getProperty("java.vm.version");
     }
 
     @OnClick({R.id.back, R.id.login_ck, R.id.btn_login, R.id.forget_password})
@@ -86,6 +87,9 @@ public class loginActivity extends AppCompatActivity {
                     if (isRemenber) {
                         App.getInstance().setName(mobile);
                         App.getInstance().setPwd(pwd);
+                    }else {
+                        App.getInstance().setName("");
+                        App.getInstance().setPwd("");
                     }
                     register(mobile, pwd);
                 }
@@ -106,7 +110,7 @@ public class loginActivity extends AppCompatActivity {
         String name = App.getInstance().getName();
         String pwd = App.getInstance().getPwd();
         if (!StringUtil.isNullOrEmpty(name) && !StringUtil.isNullOrEmpty(pwd)) {
-            loginCk.isChecked();
+            //loginCk.isChecked();
             username.setText(name);
             password.setText(pwd);
         } else {
@@ -116,8 +120,8 @@ public class loginActivity extends AppCompatActivity {
         loginCk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    isRemenber = true;
+                if (!isChecked) {
+                    isRemenber = false;
                 }
             }
         });

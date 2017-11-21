@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
@@ -16,7 +15,7 @@ import com.example.kkkk.helloworld.App;
 import com.example.kkkk.helloworld.http.RetrofitHttp;
 import com.example.kkkk.helloworld.location.LocationService;
 import com.example.kkkk.helloworld.location.LocationStatusManager;
-import com.example.kkkk.helloworld.location.PositionInfo;
+import com.example.kkkk.helloworld.location.AddressInfo;
 import com.example.kkkk.helloworld.location.Utils;
 
 import java.io.IOException;
@@ -40,7 +39,7 @@ public class BaseAppActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (action.equals(RECEIVER_ACTION)) {
-                PositionInfo locationResult = (PositionInfo) intent.getSerializableExtra("result");
+                AddressInfo locationResult = (AddressInfo) intent.getSerializableExtra("result");
                 if (null != locationResult) {
                     uploadAddr(locationResult);
                     //tvResult.setText(locationResult);
@@ -93,7 +92,7 @@ public class BaseAppActivity extends AppCompatActivity {
      *
      * @param info 位置
      */
-    private void uploadAddr(PositionInfo info) {
+    private void uploadAddr(AddressInfo info) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         RetrofitHttp.getRetrofit(builder.build()).uploadAddr(App.getInstance().getMyToken(), getJsonStr1(info))
                 .enqueue(new Callback<ResponseBody>() {
@@ -116,17 +115,21 @@ public class BaseAppActivity extends AppCompatActivity {
                 });
     }
 
-    private RequestBody getJsonStr1(PositionInfo info) {
+    private RequestBody getJsonStr1(AddressInfo info) {
 
-        //JSONObject object = new JSONObject();
-        //object.put("lat", info.getLat());
-        //object.put("lng", info.getLng());
-        //object.put("name", info.getName());
-        //object.put("address", info.getAddress());
-        //object.put("locType", info.getLocType());
-        //object.put("accuray", info.getAccuracy());
-        //RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), object.toJSONString());
-        RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), JSON.toJSONString(info));
+
+        JSONObject object = new JSONObject();
+        JSONObject object_ = new JSONObject();
+        object_.put("lat", info.getLat());
+        object_.put("lng", info.getLng());
+
+        object.put("coordinate",object_);
+        object.put("name", info.getName());
+        object.put("address", info.getAddress());
+        object.put("locType", info.getLocType());
+        object.put("accuray", info.getAccuracy());
+        RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), object.toJSONString());
+        //RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), JSON.toJSONString(info));
         return body;
     }
 

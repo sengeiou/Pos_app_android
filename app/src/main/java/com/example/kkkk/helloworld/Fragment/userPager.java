@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.kkkk.helloworld.Activity.MyNoticeActivity;
+import com.example.kkkk.helloworld.Activity.TrackActivity;
+import com.example.kkkk.helloworld.Activity.WorkOrderActivity;
+import com.example.kkkk.helloworld.Activity.WorkReportActivity;
 import com.example.kkkk.helloworld.Activity.settingActivity;
 import com.example.kkkk.helloworld.Activity.userinfoActivity;
 import com.example.kkkk.helloworld.R;
@@ -35,7 +39,6 @@ public class userPager extends Fragment {
     String name_;
     @BindView(R.id.name)
     TextView name;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -44,9 +47,25 @@ public class userPager extends Fragment {
         return view;
     }
 
-    @OnClick({R.id.userinfo, R.id.set})
-    public void xxxx(View view) {
+    @OnClick({R.id.userinfo, R.id.set,R.id.workOrder,R.id.wordReport,R.id.myTrack,R.id.myNotice})
+    public void click(View view) {
         switch (view.getId()) {
+            case R.id.workOrder:
+                intent = new Intent(getActivity(), WorkOrderActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.wordReport:
+                intent = new Intent(getActivity(), WorkReportActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.myTrack:
+                intent = new Intent(getActivity(), TrackActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.myNotice:
+                intent = new Intent(getActivity(), MyNoticeActivity.class);
+                startActivity(intent);
+                break;
             case R.id.userinfo:
                 intent = new Intent(getActivity(), userinfoActivity.class);
                 //startActivity(intent);
@@ -57,7 +76,6 @@ public class userPager extends Fragment {
                 startActivity(intent);
                 break;
         }
-
     }
 
     @Override

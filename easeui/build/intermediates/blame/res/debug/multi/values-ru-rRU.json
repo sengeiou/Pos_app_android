@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ru-rRU\\values-ru-rRU.xml",
+        "outputFile": "D:\\one_code\\HelloWorld\\easeui\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ru-rRU\\values-ru-rRU.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,14 @@
                     "endOffset": 122
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 71,
+                        "startColumn": 4,
+                        "startOffset": 4322,
+                        "endColumn": 71,
+                        "endOffset": 4389
+                    }
                 }
             },
             {
@@ -23,7 +30,14 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 77,
+                        "startColumn": 4,
+                        "startOffset": 4642,
+                        "endColumn": 61,
+                        "endOffset": 4699
+                    }
                 }
             },
             {
@@ -35,7 +49,14 @@
                     "endOffset": 256
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 87,
+                        "startColumn": 4,
+                        "startOffset": 5257,
+                        "endColumn": 71,
+                        "endOffset": 5324
+                    }
                 }
             },
             {
@@ -47,7 +68,14 @@
                     "endOffset": 318
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 112,
+                        "startColumn": 4,
+                        "startOffset": 6759,
+                        "endColumn": 61,
+                        "endOffset": 6816
+                    }
                 }
             },
             {
@@ -59,7 +87,14 @@
                     "endOffset": 362
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 108,
+                        "startColumn": 4,
+                        "startOffset": 6485,
+                        "endColumn": 43,
+                        "endOffset": 6524
+                    }
                 }
             },
             {
@@ -71,7 +106,14 @@
                     "endOffset": 431
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 91,
+                        "startColumn": 4,
+                        "startOffset": 5537,
+                        "endColumn": 68,
+                        "endOffset": 5601
+                    }
                 }
             },
             {
@@ -83,7 +125,14 @@
                     "endOffset": 492
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 82,
+                        "startColumn": 4,
+                        "startOffset": 4925,
+                        "endColumn": 60,
+                        "endOffset": 4981
+                    }
                 }
             },
             {
@@ -95,7 +144,14 @@
                     "endOffset": 548
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 92,
+                        "startColumn": 4,
+                        "startOffset": 5606,
+                        "endColumn": 55,
+                        "endOffset": 5657
+                    }
                 }
             },
             {
@@ -107,7 +163,14 @@
                     "endOffset": 612
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 102,
+                        "startColumn": 4,
+                        "startOffset": 6165,
+                        "endColumn": 63,
+                        "endOffset": 6224
+                    }
                 }
             },
             {
@@ -119,7 +182,14 @@
                     "endOffset": 662
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 93,
+                        "startColumn": 4,
+                        "startOffset": 5662,
+                        "endColumn": 49,
+                        "endOffset": 5707
+                    }
                 }
             },
             {
@@ -131,7 +201,14 @@
                     "endOffset": 719
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 78,
+                        "startColumn": 4,
+                        "startOffset": 4704,
+                        "endColumn": 56,
+                        "endOffset": 4756
+                    }
                 }
             },
             {
@@ -143,7 +220,14 @@
                     "endOffset": 777
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 85,
+                        "startColumn": 4,
+                        "startOffset": 5147,
+                        "endColumn": 57,
+                        "endOffset": 5200
+                    }
                 }
             },
             {
@@ -155,7 +239,14 @@
                     "endOffset": 868
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 84,
+                        "startColumn": 4,
+                        "startOffset": 5056,
+                        "endColumn": 90,
+                        "endOffset": 5142
+                    }
                 }
             },
             {
@@ -167,7 +258,14 @@
                     "endOffset": 957
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 110,
+                        "startColumn": 1,
+                        "startOffset": 6579,
+                        "endColumn": 85,
+                        "endOffset": 6663
+                    }
                 }
             },
             {
@@ -179,7 +277,14 @@
                     "endOffset": 1028
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 90,
+                        "startColumn": 4,
+                        "startOffset": 5466,
+                        "endColumn": 70,
+                        "endOffset": 5532
+                    }
                 }
             },
             {
@@ -191,7 +296,14 @@
                     "endOffset": 1108
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 88,
+                        "startColumn": 4,
+                        "startOffset": 5329,
+                        "endColumn": 79,
+                        "endOffset": 5404
+                    }
                 }
             },
             {
@@ -203,7 +315,14 @@
                     "endOffset": 1167
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 80,
+                        "startColumn": 4,
+                        "startOffset": 4818,
+                        "endColumn": 58,
+                        "endOffset": 4872
+                    }
                 }
             },
             {
@@ -215,7 +334,14 @@
                     "endOffset": 1240
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 94,
+                        "startColumn": 4,
+                        "startOffset": 5712,
+                        "endColumn": 72,
+                        "endOffset": 5780
+                    }
                 }
             },
             {
@@ -227,7 +353,14 @@
                     "endOffset": 1297
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 79,
+                        "startColumn": 4,
+                        "startOffset": 4761,
+                        "endColumn": 56,
+                        "endOffset": 4813
+                    }
                 }
             },
             {
@@ -239,7 +372,14 @@
                     "endOffset": 1367
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 83,
+                        "startColumn": 4,
+                        "startOffset": 4986,
+                        "endColumn": 69,
+                        "endOffset": 5051
+                    }
                 }
             },
             {
@@ -251,7 +391,14 @@
                     "endOffset": 1424
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 73,
+                        "startColumn": 4,
+                        "startOffset": 4437,
+                        "endColumn": 56,
+                        "endOffset": 4489
+                    }
                 }
             },
             {
@@ -263,7 +410,14 @@
                     "endOffset": 1474
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 68,
+                        "startColumn": 4,
+                        "startOffset": 4155,
+                        "endColumn": 49,
+                        "endOffset": 4200
+                    }
                 }
             },
             {
@@ -275,7 +429,14 @@
                     "endOffset": 1517
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 107,
+                        "startColumn": 4,
+                        "startOffset": 6442,
+                        "endColumn": 42,
+                        "endOffset": 6480
+                    }
                 }
             },
             {
@@ -287,7 +448,14 @@
                     "endOffset": 1561
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 104,
+                        "startColumn": 4,
+                        "startOffset": 6275,
+                        "endColumn": 43,
+                        "endOffset": 6314
+                    }
                 }
             },
             {
@@ -299,7 +467,14 @@
                     "endOffset": 1610
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 574,
+                        "endColumn": 48,
+                        "endOffset": 618
+                    }
                 }
             },
             {
@@ -311,7 +486,14 @@
                     "endOffset": 1669
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 515,
+                        "endColumn": 58,
+                        "endOffset": 569
+                    }
                 }
             },
             {
@@ -323,7 +505,14 @@
                     "endOffset": 1724
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 403,
+                        "endColumn": 54,
+                        "endOffset": 453
+                    }
                 }
             },
             {
@@ -335,7 +524,14 @@
                     "endOffset": 1772
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 355,
+                        "endColumn": 47,
+                        "endOffset": 398
+                    }
                 }
             },
             {
@@ -347,7 +543,14 @@
                     "endOffset": 1829
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 458,
+                        "endColumn": 56,
+                        "endOffset": 510
+                    }
                 }
             },
             {
@@ -359,7 +562,14 @@
                     "endOffset": 1891
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 623,
+                        "endColumn": 61,
+                        "endOffset": 680
+                    }
                 }
             },
             {
@@ -371,7 +581,14 @@
                     "endOffset": 1930
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 167,
+                        "endColumn": 38,
+                        "endOffset": 201
+                    }
                 }
             },
             {
@@ -383,7 +600,14 @@
                     "endOffset": 1983
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 75,
+                        "startColumn": 4,
+                        "startOffset": 4535,
+                        "endColumn": 52,
+                        "endOffset": 4583
+                    }
                 }
             },
             {
@@ -395,7 +619,14 @@
                     "endOffset": 2035
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 86,
+                        "startColumn": 4,
+                        "startOffset": 5205,
+                        "endColumn": 51,
+                        "endOffset": 5252
+                    }
                 }
             },
             {
@@ -407,7 +638,14 @@
                     "endOffset": 2088
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 66,
+                        "startColumn": 4,
+                        "startOffset": 4059,
+                        "endColumn": 52,
+                        "endOffset": 4107
+                    }
                 }
             },
             {
@@ -419,7 +657,14 @@
                     "endOffset": 2136
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 47,
+                        "startColumn": 4,
+                        "startOffset": 2711,
+                        "endColumn": 47,
+                        "endOffset": 2754
+                    }
                 }
             },
             {
@@ -431,7 +676,14 @@
                     "endOffset": 2188
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 44,
+                        "startColumn": 4,
+                        "startOffset": 2561,
+                        "endColumn": 51,
+                        "endOffset": 2608
+                    }
                 }
             },
             {
@@ -443,7 +695,14 @@
                     "endOffset": 2236
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1747,
+                        "endColumn": 47,
+                        "endOffset": 1790
+                    }
                 }
             },
             {
@@ -455,7 +714,14 @@
                     "endOffset": 2294
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 249,
+                        "endColumn": 57,
+                        "endOffset": 302
+                    }
                 }
             },
             {
@@ -467,7 +733,14 @@
                     "endOffset": 2344
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 45,
+                        "startColumn": 4,
+                        "startOffset": 2613,
+                        "endColumn": 49,
+                        "endOffset": 2658
+                    }
                 }
             },
             {
@@ -479,7 +752,14 @@
                     "endOffset": 2392
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 46,
+                        "startColumn": 4,
+                        "startOffset": 2663,
+                        "endColumn": 47,
+                        "endOffset": 2706
+                    }
                 }
             },
             {
@@ -491,7 +771,14 @@
                     "endOffset": 2440
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 307,
+                        "endColumn": 47,
+                        "endOffset": 350
+                    }
                 }
             },
             {
@@ -503,7 +790,14 @@
                     "endOffset": 2519
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 1795,
+                        "endColumn": 78,
+                        "endOffset": 1869
+                    }
                 }
             },
             {
@@ -515,7 +809,14 @@
                     "endOffset": 2561
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 1874,
+                        "endColumn": 41,
+                        "endOffset": 1911
+                    }
                 }
             },
             {
@@ -527,7 +828,14 @@
                     "endOffset": 2615
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 64,
+                        "startColumn": 4,
+                        "startOffset": 3914,
+                        "endColumn": 53,
+                        "endOffset": 3963
+                    }
                 }
             },
             {
@@ -539,7 +847,14 @@
                     "endOffset": 2705
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 35,
+                        "startColumn": 4,
+                        "startOffset": 2020,
+                        "endColumn": 89,
+                        "endOffset": 2105
+                    }
                 }
             },
             {
@@ -551,7 +866,14 @@
                     "endOffset": 2763
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 34,
+                        "startColumn": 4,
+                        "startOffset": 1962,
+                        "endColumn": 57,
+                        "endOffset": 2015
+                    }
                 }
             },
             {
@@ -563,7 +885,14 @@
                     "endOffset": 2853
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 4,
+                        "startOffset": 3044,
+                        "endColumn": 89,
+                        "endOffset": 3129
+                    }
                 }
             },
             {
@@ -575,7 +904,14 @@
                     "endOffset": 2948
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1317,
+                        "endColumn": 94,
+                        "endOffset": 1407
+                    }
                 }
             },
             {
@@ -587,7 +923,14 @@
                     "endOffset": 3011
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 99,
+                        "startColumn": 4,
+                        "startOffset": 5973,
+                        "endColumn": 62,
+                        "endOffset": 6031
+                    }
                 }
             },
             {
@@ -599,7 +942,14 @@
                     "endOffset": 3118
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 58,
+                        "startColumn": 4,
+                        "startOffset": 3530,
+                        "endColumn": 106,
+                        "endOffset": 3632
+                    }
                 }
             },
             {
@@ -611,7 +961,14 @@
                     "endOffset": 3244
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1412,
+                        "endColumn": 125,
+                        "endOffset": 1533
+                    }
                 }
             },
             {
@@ -623,7 +980,14 @@
                     "endOffset": 3288
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1657,
+                        "endColumn": 43,
+                        "endOffset": 1696
+                    }
                 }
             },
             {
@@ -635,7 +999,14 @@
                     "endOffset": 3350
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1034,
+                        "endColumn": 61,
+                        "endOffset": 1091
+                    }
                 }
             },
             {
@@ -647,7 +1018,14 @@
                     "endOffset": 3393
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1220,
+                        "endColumn": 42,
+                        "endOffset": 1258
+                    }
                 }
             },
             {
@@ -659,7 +1037,14 @@
                     "endOffset": 3454
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 973,
+                        "endColumn": 60,
+                        "endOffset": 1029
+                    }
                 }
             },
             {
@@ -671,7 +1056,14 @@
                     "endOffset": 3509
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1165,
+                        "endColumn": 54,
+                        "endOffset": 1215
+                    }
                 }
             },
             {
@@ -683,7 +1075,14 @@
                     "endOffset": 3578
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1096,
+                        "endColumn": 68,
+                        "endOffset": 1160
+                    }
                 }
             },
             {
@@ -695,7 +1094,14 @@
                     "endOffset": 3632
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 76,
+                        "startColumn": 4,
+                        "startOffset": 4588,
+                        "endColumn": 53,
+                        "endOffset": 4637
+                    }
                 }
             },
             {
@@ -707,7 +1113,14 @@
                     "endOffset": 3689
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 89,
+                        "startColumn": 4,
+                        "startOffset": 5409,
+                        "endColumn": 56,
+                        "endOffset": 5461
+                    }
                 }
             },
             {
@@ -719,7 +1132,14 @@
                     "endOffset": 3780
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 56,
+                        "startColumn": 4,
+                        "startOffset": 3394,
+                        "endColumn": 90,
+                        "endOffset": 3480
+                    }
                 }
             },
             {
@@ -731,7 +1151,14 @@
                     "endOffset": 3866
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 100,
+                        "startColumn": 4,
+                        "startOffset": 6036,
+                        "endColumn": 85,
+                        "endOffset": 6117
+                    }
                 }
             },
             {
@@ -743,7 +1170,14 @@
                     "endOffset": 3911
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 57,
+                        "startColumn": 4,
+                        "startOffset": 3485,
+                        "endColumn": 44,
+                        "endOffset": 3525
+                    }
                 }
             },
             {
@@ -755,7 +1189,14 @@
                     "endOffset": 4002
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 55,
+                        "startColumn": 4,
+                        "startOffset": 3303,
+                        "endColumn": 90,
+                        "endOffset": 3389
+                    }
                 }
             },
             {
@@ -767,7 +1208,14 @@
                     "endOffset": 4046
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 42,
+                        "startColumn": 4,
+                        "startOffset": 2460,
+                        "endColumn": 43,
+                        "endOffset": 2499
+                    }
                 }
             },
             {
@@ -779,7 +1227,14 @@
                     "endOffset": 4092
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1701,
+                        "endColumn": 45,
+                        "endOffset": 1742
+                    }
                 }
             },
             {
@@ -791,7 +1246,14 @@
                     "endOffset": 4135
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 72,
+                        "startColumn": 4,
+                        "startOffset": 4394,
+                        "endColumn": 42,
+                        "endOffset": 4432
+                    }
                 }
             },
             {
@@ -803,7 +1265,14 @@
                     "endOffset": 4183
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 81,
+                        "startColumn": 4,
+                        "startOffset": 4877,
+                        "endColumn": 47,
+                        "endOffset": 4920
+                    }
                 }
             },
             {
@@ -815,7 +1284,14 @@
                     "endOffset": 4229
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 103,
+                        "startColumn": 4,
+                        "startOffset": 6229,
+                        "endColumn": 45,
+                        "endOffset": 6270
+                    }
                 }
             },
             {
@@ -827,7 +1303,14 @@
                     "endOffset": 4320
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 111,
+                        "startColumn": 4,
+                        "startOffset": 6668,
+                        "endColumn": 90,
+                        "endOffset": 6754
+                    }
                 }
             },
             {
@@ -839,7 +1322,14 @@
                     "endOffset": 4393
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 37,
+                        "startColumn": 4,
+                        "startOffset": 2172,
+                        "endColumn": 72,
+                        "endOffset": 2240
+                    }
                 }
             },
             {
@@ -851,7 +1341,14 @@
                     "endOffset": 4458
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 39,
+                        "startColumn": 4,
+                        "startOffset": 2303,
+                        "endColumn": 64,
+                        "endOffset": 2363
+                    }
                 }
             },
             {
@@ -863,7 +1360,14 @@
                     "endOffset": 4520
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 36,
+                        "startColumn": 4,
+                        "startOffset": 2110,
+                        "endColumn": 61,
+                        "endOffset": 2167
+                    }
                 }
             },
             {
@@ -875,7 +1379,14 @@
                     "endOffset": 4560
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 95,
+                        "startColumn": 4,
+                        "startOffset": 5785,
+                        "endColumn": 39,
+                        "endOffset": 5820
+                    }
                 }
             },
             {
@@ -887,7 +1398,14 @@
                     "endOffset": 4601
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 4,
+                        "startOffset": 3134,
+                        "endColumn": 40,
+                        "endOffset": 3170
+                    }
                 }
             },
             {
@@ -899,7 +1417,14 @@
                     "endOffset": 4729
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 54,
+                        "startColumn": 4,
+                        "startOffset": 3175,
+                        "endColumn": 127,
+                        "endOffset": 3298
+                    }
                 }
             },
             {
@@ -911,7 +1436,14 @@
                     "endOffset": 4810
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 741,
+                        "endColumn": 80,
+                        "endOffset": 817
+                    }
                 }
             },
             {
@@ -923,7 +1455,14 @@
                     "endOffset": 4853
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 101,
+                        "startColumn": 4,
+                        "startOffset": 6122,
+                        "endColumn": 42,
+                        "endOffset": 6160
+                    }
                 }
             },
             {
@@ -935,7 +1474,14 @@
                     "endOffset": 4921
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 2807,
+                        "endColumn": 67,
+                        "endOffset": 2870
+                    }
                 }
             },
             {
@@ -947,7 +1493,14 @@
                     "endOffset": 5040
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1538,
+                        "endColumn": 118,
+                        "endOffset": 1652
+                    }
                 }
             },
             {
@@ -959,7 +1512,14 @@
                     "endOffset": 5088
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 106,
+                        "startColumn": 4,
+                        "startOffset": 6394,
+                        "endColumn": 47,
+                        "endOffset": 6437
+                    }
                 }
             },
             {
@@ -971,7 +1531,14 @@
                     "endOffset": 5171
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 61,
+                        "startColumn": 4,
+                        "startOffset": 3744,
+                        "endColumn": 82,
+                        "endOffset": 3822
+                    }
                 }
             },
             {
@@ -983,7 +1550,14 @@
                     "endOffset": 5224
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 109,
+                        "startColumn": 4,
+                        "startOffset": 6529,
+                        "endColumn": 52,
+                        "endOffset": 6577
+                    }
                 }
             },
             {
@@ -995,7 +1569,14 @@
                     "endOffset": 5289
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 60,
+                        "startColumn": 4,
+                        "startOffset": 3679,
+                        "endColumn": 64,
+                        "endOffset": 3739
+                    }
                 }
             },
             {
@@ -1007,7 +1588,14 @@
                     "endOffset": 5360
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 70,
+                        "startColumn": 4,
+                        "startOffset": 4251,
+                        "endColumn": 70,
+                        "endOffset": 4317
+                    }
                 }
             },
             {
@@ -1019,7 +1607,14 @@
                     "endOffset": 5404
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 97,
+                        "startColumn": 4,
+                        "startOffset": 5880,
+                        "endColumn": 43,
+                        "endOffset": 5919
+                    }
                 }
             },
             {
@@ -1031,7 +1626,14 @@
                     "endOffset": 5454
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 40,
+                        "startColumn": 4,
+                        "startOffset": 2368,
+                        "endColumn": 49,
+                        "endOffset": 2413
+                    }
                 }
             },
             {
@@ -1043,7 +1645,14 @@
                     "endOffset": 5500
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 1916,
+                        "endColumn": 45,
+                        "endOffset": 1957
+                    }
                 }
             },
             {
@@ -1055,7 +1664,14 @@
                     "endOffset": 5601
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 2875,
+                        "endColumn": 100,
+                        "endOffset": 2971
+                    }
                 }
             },
             {
@@ -1067,7 +1683,14 @@
                     "endOffset": 5659
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 38,
+                        "startColumn": 4,
+                        "startOffset": 2245,
+                        "endColumn": 57,
+                        "endOffset": 2298
+                    }
                 }
             },
             {
@@ -1079,7 +1702,14 @@
                     "endOffset": 5708
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 98,
+                        "startColumn": 4,
+                        "startOffset": 5924,
+                        "endColumn": 48,
+                        "endOffset": 5968
+                    }
                 }
             },
             {
@@ -1091,7 +1721,14 @@
                     "endOffset": 5790
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 822,
+                        "endColumn": 81,
+                        "endOffset": 899
+                    }
                 }
             },
             {
@@ -1103,7 +1740,14 @@
                     "endOffset": 5844
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1263,
+                        "endColumn": 53,
+                        "endOffset": 1312
+                    }
                 }
             },
             {
@@ -1115,7 +1759,14 @@
                     "endOffset": 5887
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 206,
+                        "endColumn": 42,
+                        "endOffset": 244
+                    }
                 }
             },
             {
@@ -1127,7 +1778,14 @@
                     "endOffset": 5928
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 74,
+                        "startColumn": 4,
+                        "startOffset": 4494,
+                        "endColumn": 40,
+                        "endOffset": 4530
+                    }
                 }
             },
             {
@@ -1139,7 +1797,14 @@
                     "endOffset": 5976
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 48,
+                        "startColumn": 4,
+                        "startOffset": 2759,
+                        "endColumn": 47,
+                        "endOffset": 2802
+                    }
                 }
             },
             {
@@ -1151,7 +1816,14 @@
                     "endOffset": 6044
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 51,
+                        "startColumn": 4,
+                        "startOffset": 2976,
+                        "endColumn": 67,
+                        "endOffset": 3039
+                    }
                 }
             },
             {
@@ -1163,7 +1835,14 @@
                     "endOffset": 6113
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 904,
+                        "endColumn": 68,
+                        "endOffset": 968
+                    }
                 }
             },
             {
@@ -1175,7 +1854,14 @@
                     "endOffset": 6156
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 67,
+                        "startColumn": 4,
+                        "startOffset": 4112,
+                        "endColumn": 42,
+                        "endOffset": 4150
+                    }
                 }
             },
             {
@@ -1187,7 +1873,14 @@
                     "endOffset": 6198
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 59,
+                        "startColumn": 4,
+                        "startOffset": 3637,
+                        "endColumn": 41,
+                        "endOffset": 3674
+                    }
                 }
             },
             {
@@ -1199,7 +1892,14 @@
                     "endOffset": 6244
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 69,
+                        "startColumn": 4,
+                        "startOffset": 4205,
+                        "endColumn": 45,
+                        "endOffset": 4246
+                    }
                 }
             },
             {
@@ -1211,7 +1911,14 @@
                     "endOffset": 6287
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 63,
+                        "startColumn": 4,
+                        "startOffset": 3871,
+                        "endColumn": 42,
+                        "endOffset": 3909
+                    }
                 }
             },
             {
@@ -1223,7 +1930,14 @@
                     "endOffset": 6340
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 52,
+                        "endOffset": 104
+                    }
                 }
             },
             {
@@ -1235,7 +1949,14 @@
                     "endOffset": 6398
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 109,
+                        "endColumn": 57,
+                        "endOffset": 162
+                    }
                 }
             },
             {
@@ -1247,7 +1968,14 @@
                     "endOffset": 6473
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 105,
+                        "startColumn": 4,
+                        "startOffset": 6319,
+                        "endColumn": 74,
+                        "endOffset": 6389
+                    }
                 }
             },
             {
@@ -1259,7 +1987,14 @@
                     "endOffset": 6529
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 685,
+                        "endColumn": 55,
+                        "endOffset": 736
+                    }
                 }
             },
             {
@@ -1271,7 +2006,14 @@
                     "endOffset": 6584
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 96,
+                        "startColumn": 4,
+                        "startOffset": 5825,
+                        "endColumn": 54,
+                        "endOffset": 5875
+                    }
                 }
             },
             {
@@ -1283,7 +2025,14 @@
                     "endOffset": 6626
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 41,
+                        "startColumn": 4,
+                        "startOffset": 2418,
+                        "endColumn": 41,
+                        "endOffset": 2455
+                    }
                 }
             },
             {
@@ -1295,7 +2044,14 @@
                     "endOffset": 6670
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 62,
+                        "startColumn": 4,
+                        "startOffset": 3827,
+                        "endColumn": 43,
+                        "endOffset": 3866
+                    }
                 }
             },
             {
@@ -1307,7 +2063,14 @@
                     "endOffset": 6727
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 43,
+                        "startColumn": 4,
+                        "startOffset": 2504,
+                        "endColumn": 56,
+                        "endOffset": 2556
+                    }
                 }
             },
             {
@@ -1319,7 +2082,14 @@
                     "endOffset": 6818
                 },
                 "from": {
-                    "file": "E:\\Maintenance_service_system\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml"
+                    "file": "D:\\one_code\\HelloWorld\\easeui\\src\\main\\res\\values-ru-rRU\\ease_strings.xml",
+                    "position": {
+                        "startLine": 65,
+                        "startColumn": 4,
+                        "startOffset": 3968,
+                        "endColumn": 90,
+                        "endOffset": 4054
+                    }
                 }
             }
         ]

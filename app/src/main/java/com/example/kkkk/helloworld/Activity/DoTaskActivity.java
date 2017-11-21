@@ -33,7 +33,6 @@ import com.example.kkkk.helloworld.App;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.ItemAdapter;
 import com.example.kkkk.helloworld.http.RetrofitHttp;
-import com.example.kkkk.helloworld.location.PositionInfo;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import net.lemonsoft.lemonhello.LemonHello;
@@ -123,7 +122,7 @@ public class DoTaskActivity extends BaseAppActivity implements View.OnClickListe
 
     private void initView() {
         Intent intent = getIntent();
-        uuid = intent.getStringExtra("uuid");
+        uuid = intent.getStringExtra("merchantUuid");
         address_=intent.getStringExtra("address");
         latlng=JSON.parseArray(intent.getStringExtra("latlng"));
         items =new StringBuilder();
@@ -421,8 +420,11 @@ public class DoTaskActivity extends BaseAppActivity implements View.OnClickListe
     private RequestBody getJsonStr(String lat,String lng,String address) {
 
         JSONObject object = new JSONObject();
-        object.put("lat", lat);
-        object.put("lng", lng);
+        JSONObject object_ = new JSONObject();
+        object_.put("lat", lat);
+        object_.put("lng", lng);
+
+        object.put("coordinate", object_);
         object.put("address", address);
         RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), object.toJSONString());
         return body;

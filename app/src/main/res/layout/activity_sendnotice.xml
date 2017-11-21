@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/text_while"
     tools:context="com.example.kkkk.helloworld.Activity.sendnoticeActivity">
     <RelativeLayout style="@style/topbar_bg">
         <ImageButton
@@ -34,7 +35,7 @@
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="56dp"
             android:textCursorDrawable="@null"
             app:met_textColorHint="@color/hint_color"
             app:met_primaryColor="@color/textColor_1"

@@ -18,10 +18,10 @@ import com.example.kkkk.helloworld.R;
  * @Description:gridview的Adapter
  */
 public class nowtaskAdapter extends BaseAdapter {
-    public String[] name = {"日常维护", "日常维护","新装"};
-    public String[] code = {"B8156151615", "B8156151615","B8156151615"};
-    public String[] user = {"王经理", "王经理","王经理"};
-    public String[] status = {"未开始", "进行中","审核通过"};
+    //public String[] name = {"日常维护", "日常维护","新装"};
+    //public String[] code = {"B8156151615", "B8156151615","B8156151615"};
+    //public String[] user = {"王经理", "王经理","王经理"};
+    //public String[] status = {"未开始", "进行中","审核通过"};
     public int[] imgs_0= {R.drawable.status_bg_green, R.drawable.status_bg_orange,R.drawable.status_bg_blue};//,
     private Context mContext;
 
@@ -51,7 +51,7 @@ public class nowtaskAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return name.length;
+        return list_temp.size();
     }
 
     @Override
@@ -84,17 +84,25 @@ public class nowtaskAdapter extends BaseAdapter {
         worduser.setText(user.getString("nickname"));
         //wordstatus.setText(status[position]);
         switch (json.getString("status")){
-            case "1":
-                wordstatus.setText(status[0]);
-                wordstatus.setBackgroundResource(imgs_0[0]);
-                break;
-            case "2":
-                wordstatus.setText(status[1]);
+            case "0":
+                wordstatus.setText("未派发");
                 wordstatus.setBackgroundResource(imgs_0[1]);
                 break;
-            case "3":
-                wordstatus.setText(status[2]);
+            case "1":
+                wordstatus.setText("已派发");
                 wordstatus.setBackgroundResource(imgs_0[2]);
+                break;
+            case "2":
+                wordstatus.setText("进行中");
+                wordstatus.setBackgroundResource(imgs_0[0]);
+                break;
+            case "3":
+                wordstatus.setText("已完成");
+                wordstatus.setBackgroundResource(imgs_0[2]);
+                break;
+            case "-1":
+                wordstatus.setText("未完成");
+                wordstatus.setBackgroundResource(imgs_0[1]);
                 break;
             default:
                 wordstatus.setText("未知");

@@ -17,7 +17,12 @@ package com.example.kkkk.helloworld;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.multidex.MultiDex;
+import android.widget.Toast;
 
 import com.example.kkkk.helloworld.util.SharedPreUtil;
 import com.example.kkkk.helloworld.util.StringUtil;
@@ -67,39 +72,6 @@ public class App extends Application {
         //init demo helper
         DemoHelper.getInstance().init(applicationContext);
         //red packet code : 初始化红包SDK，开启日志输出开关
-
-        /*RedPacket.getInstance().initRedPacket(applicationContext, RPConstant.AUTH_METHOD_EASEMOB, new RPInitRedPacketCallback() {
-
-            @Override
-            public void initTokenData(RPValueCallback<TokenData> callback) {
-                TokenData tokenData = new TokenData();
-                tokenData.imUserId = EMClient.getInstance().getCurrentUser();
-                //此处使用环信id代替了appUserId 开发者可传入App的appUserId
-                tokenData.appUserId = EMClient.getInstance().getCurrentUser();
-                tokenData.imToken = EMClient.getInstance().getAccessToken();
-                //同步或异步获取TokenData 获取成功后回调onSuccess()方法
-                callback.onSuccess(tokenData);
-            }
-
-            @Override
-            public RedPacketInfo initCurrentUserSync() {
-                //这里需要同步设置当前用户id、昵称和头像url
-                String fromAvatarUrl = "";
-                String fromNickname = EMClient.getInstance().getCurrentUser();
-                EaseUser easeUser = EaseUserUtils.getUserInfo(fromNickname);
-                if (easeUser != null) {
-                    fromAvatarUrl = TextUtils.isEmpty(easeUser.getAvatar()) ? "none" : easeUser.getAvatar();
-                    fromNickname = TextUtils.isEmpty(easeUser.getNick()) ? easeUser.getUsername() : easeUser.getNick();
-                }
-                RedPacketInfo redPacketInfo = new RedPacketInfo();
-                redPacketInfo.fromUserId = EMClient.getInstance().getCurrentUser();
-                redPacketInfo.fromAvatarUrl = fromAvatarUrl;
-                redPacketInfo.fromNickName = fromNickname;
-                return redPacketInfo;
-            }
-        });
-        RedPacket.getInstance().setDebugMode(true);
-        //end of red packet code*/
     }
     public String getName() {
         if (StringUtil.isNullOrEmpty(name)) {

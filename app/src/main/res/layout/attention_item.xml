@@ -48,12 +48,10 @@
                 android:layout_height="wrap_content"
                 android:textSize="10sp"
                 android:layout_marginTop="9.3dp"
-                android:paddingRight="10.7dp"
                 android:gravity="center"
-                android:paddingLeft="5dp"
                 android:background="@drawable/status_bg_green"
                 android:textColor="#ffffff"
-                android:text="确认收到"/>
+                android:text=""/>
             <TextView
                 android:id="@+id/wordtime"
                 android:layout_width="match_parent"

@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     android:background="@color/text_while">
 
+    <com.jwenfeng.library.pulltorefresh.PullToRefreshLayout
+        android:id="@+id/swipe_notice_read"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <GridView
         android:id="@+id/grid_read"
         android:layout_width="match_parent"
@@ -14,4 +18,5 @@
         android:numColumns="1"
         android:scrollbars="none">
     </GridView>
+    </com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>
 </LinearLayout>

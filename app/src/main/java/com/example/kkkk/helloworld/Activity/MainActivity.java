@@ -3,6 +3,7 @@ package com.example.kkkk.helloworld.Activity;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -26,6 +27,8 @@ import com.jude.utils.JActivityManager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends BaseAppActivity {
 
@@ -34,6 +37,8 @@ public class MainActivity extends BaseAppActivity {
     private ViewPager mViewPager;
     private List<Fragment> mFragments;
     private TablayoutAdapter mAdapter;
+    public boolean isexit = false;
+
     private ExitUtils exit = new ExitUtils();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,29 +123,30 @@ public class MainActivity extends BaseAppActivity {
 
         super.onStop();
     }
-    @Override
+    //重写onKeyDown方法,
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            pressAgainExit();
-            return true;
+        if (keyCode == KeyEvent.KEYCODE_BACK) {//当返回按键被按下
+            //调用exit()方法
+            exit();
         }
-
-        return super.onKeyDown(keyCode, event);
+        return false;
     }
-
-    /**
-     * 双击返回键离开
-     */
-    private void pressAgainExit() {
-        if (exit.isExit()) {
-            //Toast.makeText(this, "退出", Toast.LENGTH_SHORT).show();
-            System.exit(0);
-            //for (Activity activity : JActivityManager.getActivityStack()) {
-            //    activity.finish();
-            //}
-        } else {
-            Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
-            exit.doExitAction();
+    //被调用的exit()方法
+    private void exit() {
+        Timer timer;//声明一个定时器
+        if (!isexit) {  //如果isExit为false,执行下面代码
+            isexit = true;  //改变值为true
+            Toast.makeText(MainActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();  //弹出提示
+            timer = new Timer();  //得到定时器对象
+            //执行定时任务,两秒内如果没有再次按下,把isExit值恢复为false,再次按下返回键时依然会进入if这段代码
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    isexit = false;
+                }
+            }, 2000);
+        } else {//如果两秒内再次按下了返回键,这时isExit的值已经在第一次按下时赋值为true了,因此不会进入if后的代码,直接执行下面的代码
+            finish();
         }
     }
     EMMessageListener messageListener = new EMMessageListener() {

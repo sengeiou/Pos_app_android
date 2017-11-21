@@ -7,6 +7,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -17,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -34,7 +36,7 @@ import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.services.core.LatLonPoint;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.InfoWinAdapter;
-import com.example.kkkk.helloworld.model.bean.PositionInfo;
+import com.example.kkkk.helloworld.location.PositionInfo;
 import com.example.kkkk.helloworld.util.AMapUtil;
 import com.example.kkkk.helloworld.util.Utils;
 
@@ -77,10 +79,23 @@ public class SignInActivity extends AppCompatActivity implements AMap.OnMapClick
         mMapView.onCreate(savedInstanceState);
         initData();
         init();
-        startSingleLocation();
+        requestPermission();
         aMap.moveCamera(mCameraUpdate);
 
 
+    }
+    /**
+     * 请求授权
+     */
+    private void requestPermission(){
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){ //表示未授权时
+            //进行授权
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+        }else{
+            startSingleLocation();
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -261,4 +276,19 @@ public class SignInActivity extends AppCompatActivity implements AMap.OnMapClick
         return false;
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode){
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){ //同意权限申请
+                    startSingleLocation();
+                }else { //拒绝权限申请
+                    Toast.makeText(this,"权限被拒绝了",Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                break;
+        }
+    }
 }

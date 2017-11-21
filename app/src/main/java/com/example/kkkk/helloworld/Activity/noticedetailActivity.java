@@ -77,7 +77,6 @@ public class noticedetailActivity extends BaseAppActivity {
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Response<ResponseBody> response) {
-                        mDialog.dismiss();
                         try {
                             String result = response.body().string();
                             JSONObject jsonObject = JSON.parseObject(result);
@@ -95,6 +94,7 @@ public class noticedetailActivity extends BaseAppActivity {
                                 time.setText(json.getString("createTime"));
                                 content.setText(json.getString("content"));
                             }
+                            mDialog.dismiss();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

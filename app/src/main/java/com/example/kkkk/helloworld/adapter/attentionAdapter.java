@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.kkkk.helloworld.BaseViewHolder;
 import com.example.kkkk.helloworld.R;
-import com.example.kkkk.helloworld.model.bean.WarringMsg;
+import com.example.kkkk.helloworld.location.WarringMsg;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ import java.util.List;
 public class attentionAdapter extends BaseAdapter {
     public String[] title = {"工作调度通知", "工作调度通知","工作调度通知","工作调度通知", "工作调度通知","工作调度通知"};
     public String[] name = {"小王", "小王","小王","小王", "小王","小王"};
-    public String[] status = {"等待处理", "确认收到"};
+    public String[] status = {"未读", "已读"};
     public String[] time = {"2017 9-10", "2017 9-10","2017 9-10","2017 9-10", "2017 9-10","2017 9-10"};
     public int[] imgs_0= {R.drawable.status_bg_orange, R.drawable.status_bg_green};//,
     private Context mContext;

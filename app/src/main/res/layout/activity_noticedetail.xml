@@ -53,7 +53,7 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="公司主营业务增加旅游产品"
+            android:text=""
             android:textSize="16dp"
             android:textColor="@color/textColor_2"/>
         <TextView
@@ -77,7 +77,7 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请各部门安排好工作"
+            android:text=""
             android:textSize="14sp"
             android:padding="5dp"
             android:textColor="@color/textColor_2"

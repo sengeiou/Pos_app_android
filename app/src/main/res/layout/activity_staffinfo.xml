@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context="com.example.kkkk.helloworld.Activity.userinfoActivity"
+    android:orientation="vertical">
+    <RelativeLayout style="@style/topbar_bg">
+        <ImageButton
+            android:id="@+id/back"
+            style="@style/topbar_return_img"
+            android:background="@color/text_while"
+            />
+        <TextView
+            style="@style/topbar_title"
+            android:layout_centerHorizontal="true"
+            android:text="员工信息" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/selecticon"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_marginTop="10.7dp"
+        android:background="@color/text_while"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="14sp"
+            android:layout_weight="8"
+            android:gravity="center_vertical"
+            android:textColor="@color/textColor_2"
+            android:drawablePadding="13.7dp"
+            android:background="@color/text_while"
+            android:text="头像"
+            android:paddingLeft="10.7dp"
+            />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/icon"
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/head"
+            android:layout_weight="1"/>
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:layout_marginLeft="10.5dp"
+        android:src="@drawable/enter_line"
+        />
+
+    <LinearLayout
+        android:id="@+id/selectname"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:background="@color/text_while"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/text_while"
+            android:drawablePadding="13.7dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10.7dp"
+            android:text="昵称"
+            android:textColor="@color/textColor_2"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/text_while"
+            android:gravity="right|center_vertical"
+            android:text="老王"
+            android:textColor="@color/remember_pwd"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:layout_marginLeft="10.5dp"
+        android:src="@drawable/enter_line"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:id="@+id/selectsex"
+        android:background="@color/text_while"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="14sp"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:textColor="@color/textColor_2"
+            android:drawablePadding="13.7dp"
+            android:background="@color/text_while"
+            android:text="性别"
+            android:paddingLeft="10.7dp"
+            />
+
+        <TextView
+            android:id="@+id/sex"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/text_while"
+            android:gravity="right|center_vertical"
+
+            android:text="男"
+            android:textColor="@color/remember_pwd"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:layout_marginLeft="10.5dp"
+        android:src="@drawable/enter_line"
+        />
+    <LinearLayout
+        android:id="@+id/selectage"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:background="@color/text_while"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="14sp"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
+            android:textColor="@color/textColor_2"
+            android:drawablePadding="13.7dp"
+            android:background="@color/text_while"
+            android:text="年龄"
+            android:paddingLeft="10.7dp"
+            />
+        <TextView
+            android:id="@+id/age"
+            android:gravity="right|center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textSize="12sp"
+            android:layout_weight="4"
+
+            android:textColor="@color/remember_pwd"
+            android:background="@color/text_while"
+            android:text="18"
+            />
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:layout_marginLeft="10.5dp"
+        android:src="@drawable/enter_line"
+        />
+</LinearLayout>
