@@ -12,7 +12,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
-import com.alibaba.fastjson.JSONArray;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -28,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.kkkk.helloworld.App;
 import com.example.kkkk.helloworld.R;
@@ -349,7 +349,7 @@ public class DoTaskActivity extends BaseAppActivity implements View.OnClickListe
         mDialog.show();
         Map<String, RequestBody> params = new HashMap<>();
         //以下参数是伪代码，参数需要换成自己服务器支持的
-        params.put("uuid", convertToRequestBody("uuid"));
+        params.put("uuid", convertToRequestBody(uuid));
         params.put("items", convertToRequestBody(items));
         params.put("messageMoney", convertToRequestBody(messageMoney));
         params.put("messageMoneyType", convertToRequestBody(messageMoneyType));
@@ -393,7 +393,7 @@ public class DoTaskActivity extends BaseAppActivity implements View.OnClickListe
     private void getMerchantCollect(String uuid){
         mDialog.show();
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        RetrofitHttp.getRetrofit(builder.build()).merchantCollect(uuid,getJsonStr(address_,latlng.getString(0),latlng.getString(0)))
+        RetrofitHttp.getRetrofit(builder.build()).merchantCollect(uuid,getJsonStr(address_,latlng.getDouble(0),latlng.getDouble(0)))
                 .enqueue(new Callback<ResponseBody>() {
                     @Override
                     public void onResponse(Response<ResponseBody> response) {
@@ -417,7 +417,7 @@ public class DoTaskActivity extends BaseAppActivity implements View.OnClickListe
                 });
     }
 
-    private RequestBody getJsonStr(String lat,String lng,String address) {
+    private RequestBody getJsonStr(String address,double lat,double lng) {
 
         JSONObject object = new JSONObject();
         JSONObject object_ = new JSONObject();

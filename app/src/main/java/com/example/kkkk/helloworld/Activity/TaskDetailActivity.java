@@ -3,7 +3,6 @@ package com.example.kkkk.helloworld.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -145,7 +144,7 @@ public class TaskDetailActivity extends BaseAppActivity {
                                 address.setText(merchant.getString("address"));
                                 name.setText(merchant.getString("linkerName"));
                                 mobile.setText(merchant.getString("linkerMobile"));
-                                merchantUuid=merchant.getString("uuid");
+                                merchantUuid=json.getString("uuid");
 
                                 JSONObject locationInfo_ = JSON.parseObject(merchant.getString("locationInfo"));
                                 String coordinates_=locationInfo_.getString("coordinates");
@@ -167,21 +166,29 @@ public class TaskDetailActivity extends BaseAppActivity {
 
     private void setStatus(String status_){
         switch (status_){
-            case "1":
-                status.setText(status_0[0]);
-                status.setBackgroundResource(imgs_0[0]);
-                break;
-            case "2":
-                status.setText(status_0[1]);
+            case "0":
+                status.setText("未派发");
                 status.setBackgroundResource(imgs_0[1]);
                 break;
-            case "3":
-                status.setText(status_0[2]);
+            case "1":
+                status.setText("已派发");
                 status.setBackgroundResource(imgs_0[2]);
+                break;
+            case "2":
+                status.setText("进行中");
+                status.setBackgroundResource(imgs_0[0]);
+                break;
+            case "3":
+                status.setText("已完成");
+                status.setBackgroundResource(imgs_0[2]);
+                break;
+            case "-1":
+                status.setText("未完成");
+                status.setBackgroundResource(imgs_0[1]);
                 break;
             default:
                 status.setText("未知");
-                status.setBackgroundResource(imgs_0[0]);
+                status.setBackgroundResource(imgs_0[1]);
                 break;
         }
     }
