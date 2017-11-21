@@ -144,6 +144,7 @@ public class TaskDetailActivity extends BaseAppActivity {
                                 address.setText(merchant.getString("address"));
                                 name.setText(merchant.getString("linkerName"));
                                 mobile.setText(merchant.getString("linkerMobile"));
+                                code.setText(merchant.getString("code"));
                                 merchantUuid=json.getString("uuid");
 
                                 JSONObject locationInfo_ = JSON.parseObject(merchant.getString("locationInfo"));
