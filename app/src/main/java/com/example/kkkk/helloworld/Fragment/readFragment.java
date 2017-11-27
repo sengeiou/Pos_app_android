@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
@@ -47,12 +48,14 @@ public class readFragment extends Fragment {
     PullToRefreshLayout swip_read;
     int curPage=1;
     int flag=1;
+    TextView errorView;
     private List<JSONObject> list = new ArrayList<>();
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_read,container,false);
 
         gridView = (GridView) view.findViewById(R.id.grid_read);
         swip_read= (PullToRefreshLayout) view.findViewById(R.id.swipe_notice_read);
+        errorView= (TextView) view.findViewById(R.id.errorview);
         initView();
         getReadList(1);
         onfresh();
@@ -131,7 +134,11 @@ public class readFragment extends Fragment {
                                                 .getJSONObject(i);
                                         list.add(json);
                                     }
-                                    loadList(list,totalSize);
+                                    if (list_.equals("[]")){
+                                        errorView.setVisibility(View.VISIBLE);
+                                    }else {
+                                        loadList(list,totalSize);
+                                    }
                                 }
                             }
                         } catch (IOException e) {

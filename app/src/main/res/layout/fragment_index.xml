@@ -74,7 +74,16 @@
         android:background="@color/text_while"
         android:drawableLeft="@drawable/attention"
         android:paddingLeft="10.7dp" />
-
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textSize="14sp"
+        android:background="@color/text_while"
+        android:textColor="@color/textColor_2"
+        android:gravity="center"
+        android:text="暂时没有通知"/>
 
     <GridView
         android:id="@+id/grid_attention"

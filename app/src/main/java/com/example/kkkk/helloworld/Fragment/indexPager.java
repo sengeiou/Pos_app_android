@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
@@ -58,6 +59,7 @@ public class indexPager extends Fragment {
     GridViewAdapter adapter;
     attentionAdapter aAdapter;
     JSONArray warringList_temp;
+    TextView status;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -65,6 +67,7 @@ public class indexPager extends Fragment {
         gridView = (GridView) view.findViewById(R.id.grid);
         grdView2 = (GridView) view.findViewById(R.id.grid_);
         grid_attention = (GridView) view.findViewById(R.id.grid_attention);
+        status= (TextView) view.findViewById(R.id.status);
         initView();
         //setData();
 
@@ -223,6 +226,10 @@ public class indexPager extends Fragment {
                                 warringList_temp = JSON.parseArray(list);
                                 warringList.clear();
                                     //sIDs.clear();
+                                if (warringList_temp.size()==0){
+                                    status.setVisibility(View.VISIBLE);
+                                    grid_attention.setVisibility(View.GONE);
+                                }else {
                                     for (int i = 0; i < warringList_temp.size(); i++) {
                                         JSONObject json = warringList_temp.getJSONObject(i);
                                         warringItem = new WarringMsg();
@@ -242,8 +249,12 @@ public class indexPager extends Fragment {
                                         warringList.add(warringItem);
 
                                     }
-                                aAdapter=new attentionAdapter(getContext(),warringList);
-                                grid_attention.setAdapter(aAdapter);
+                                    status.setVisibility(View.GONE);
+                                    grid_attention.setVisibility(View.VISIBLE);
+                                    aAdapter=new attentionAdapter(getContext(),warringList);
+                                    grid_attention.setAdapter(aAdapter);
+                                }
+
 
                             }
                         } catch (IOException e) {

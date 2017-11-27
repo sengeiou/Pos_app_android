@@ -181,7 +181,7 @@ public class UserSaetActivity extends BaseAppActivity implements AMap.OnMapClick
                 break;
             case R.id.talk:
                 //Toast.makeText(this, "不在线", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getBaseContext(), ChatActivity.class).putExtra("userId", "782818448"));
+                startActivity(new Intent(getBaseContext(), ChatActivity.class).putExtra("userId", "kanghao"));
                 break;
             case R.id.back:
                 finish();

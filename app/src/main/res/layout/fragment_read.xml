@@ -5,7 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/text_while">
-
+    <TextView
+        android:id="@+id/errorview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="暂时没有公告"
+        android:textSize="20dp"
+        android:textColor="@color/textColor_2"
+        android:gravity="center"
+        android:visibility="gone"
+        />
     <com.jwenfeng.library.pulltorefresh.PullToRefreshLayout
         android:id="@+id/swipe_notice_read"
         android:layout_width="match_parent"

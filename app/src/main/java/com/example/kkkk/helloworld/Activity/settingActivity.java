@@ -1,14 +1,18 @@
 package com.example.kkkk.helloworld.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.kkkk.helloworld.App;
+import com.example.kkkk.helloworld.DemoHelper;
 import com.example.kkkk.helloworld.R;
+import com.hyphenate.EMCallBack;
 
 import net.lemonsoft.lemonhello.LemonHello;
 import net.lemonsoft.lemonhello.LemonHelloAction;
@@ -57,15 +61,56 @@ public class settingActivity extends BaseAppActivity {
                 .addAction(new LemonHelloAction("我要退出", Color.RED, new LemonHelloActionDelegate() {
                     @Override
                     public void onClick(LemonHelloView helloView, LemonHelloInfo helloInfo, LemonHelloAction helloAction) {
+                        logout_();
+                        helloView.hide();
+                    }
+                }))
+                .show(settingActivity.this);
+    }
+
+    /*
+    * 退出环信登录
+    *
+    */
+    void logout_() {
+        final ProgressDialog pd = new ProgressDialog(this);
+        String st = getResources().getString(R.string.Are_logged_out);
+        pd.setMessage(st);
+        pd.setCanceledOnTouchOutside(false);
+        pd.show();
+        DemoHelper.getInstance().logout(true,new EMCallBack() {
+
+            @Override
+            public void onSuccess() {
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        pd.dismiss();
                         App.getInstance().setName("");
                         App.getInstance().setPwd("");
                         Intent intent = new Intent(settingActivity.this, loginActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         settingActivity.this.finish();
-                        helloView.hide();
                     }
-                }))
-                .show(settingActivity.this);
+                });
+            }
+
+            @Override
+            public void onProgress(int progress, String status) {
+
+            }
+
+            @Override
+            public void onError(int code, String message) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        // TODO Auto-generated method stub
+                        pd.dismiss();
+                        Toast.makeText(getBaseContext(), "unbind devicetokens failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
     }
 }

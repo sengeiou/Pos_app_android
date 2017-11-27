@@ -17,11 +17,13 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.baidu.platform.comjni.util.AppMD5;
 import com.example.kkkk.helloworld.App;
 import com.example.kkkk.helloworld.DemoHelper;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.db.DemoDBManager;
 import com.example.kkkk.helloworld.http.RetrofitHttp;
+import com.example.kkkk.helloworld.util.AbMd5;
 import com.example.kkkk.helloworld.util.StringUtil;
 import com.hyphenate.EMCallBack;
 import com.hyphenate.EMError;
@@ -29,6 +31,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.easeui.utils.EaseCommonUtils;
 import com.hyphenate.exceptions.HyphenateException;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.hyphenate.chat.EMOptions;
 
 import java.io.IOException;
 
@@ -54,6 +57,7 @@ public class loginActivity extends AppCompatActivity {
     MaterialEditText username;
     @BindView(R.id.password)
     MaterialEditText password;
+
     private boolean isRemenber = true;
     private ProgressDialog mDialog;
     private static final String TAG = "LoginActivity";
@@ -91,7 +95,14 @@ public class loginActivity extends AppCompatActivity {
                         App.getInstance().setName("");
                         App.getInstance().setPwd("");
                     }
-                    register(mobile, pwd);
+                    hhLogin(mobile,pwd);
+                    /*if (DemoHelper.getInstance().isLoggedIn()){
+                        Toast.makeText(this, "登录", Toast.LENGTH_SHORT).show();
+                        Login(mobile,pwd);
+                    }else {
+                        Toast.makeText(this, "未登录", Toast.LENGTH_SHORT).show();
+
+                    }*/
                 }
                 break;
             case R.id.forget_password:
@@ -127,7 +138,7 @@ public class loginActivity extends AppCompatActivity {
         });
     }
 
-    private void Login(final String mobile, final String pwd) {
+    private void hhLogin(final String mobile, final String pwd) {
         if (!EaseCommonUtils.isNetWorkConnected(this)) {
             Toast.makeText(this, R.string.network_isnot_available, Toast.LENGTH_SHORT).show();
             return;
@@ -163,37 +174,7 @@ public class loginActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 finish();*/
-                OkHttpClient.Builder builder = new OkHttpClient.Builder();
-                RetrofitHttp.getRetrofit(builder.build()).login(getJsonStr(mobile, pwd))
-                        .enqueue(new Callback<ResponseBody>() {
-                            @Override
-                            public void onResponse(Response<ResponseBody> response) {
-                                mDialog.dismiss();
-                                try {
-                                    String result = response.body().string();
-                                    JSONObject jsonObject = JSON.parseObject(result);
-                                    String msg = jsonObject.getString("message");
-                                    String Token = jsonObject.getString("data");
-                                    Toast.makeText(loginActivity.this, msg, Toast.LENGTH_SHORT).show();
-                                    if (jsonObject.getString("code").equals("failure")) {
-                                        return;
-                                    } else {
-
-                                        App.getInstance().setMyToken(Token);
-                                        startActivity(new Intent(loginActivity.this, MainActivity.class));
-                                        finish();
-                                    }
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-
-                            @Override
-                            public void onFailure(Throwable t) {
-                                mDialog.dismiss();
-                                Toast.makeText(loginActivity.this, "未知错误", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                Login(mobile,pwd);
             }
 
             @Override
@@ -218,9 +199,43 @@ public class loginActivity extends AppCompatActivity {
     private RequestBody getJsonStr(String mobile, String pwd) {
         JSONObject object = new JSONObject();
         object.put("username", mobile);
-        object.put("password", pwd);
+        object.put("password", AbMd5.MD5(pwd).toString().trim().toLowerCase());
         RequestBody body = RequestBody.create(MediaType.parse("application/json;charset=utf-8"), object.toJSONString());
         return body;
+    }
+
+    public void Login(final String mobile, final String pwd){
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        RetrofitHttp.getRetrofit(builder.build()).login(getJsonStr(mobile, pwd))
+                .enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Response<ResponseBody> response) {
+                        mDialog.dismiss();
+                        try {
+                            String result = response.body().string();
+                            JSONObject jsonObject = JSON.parseObject(result);
+                            String msg = jsonObject.getString("message");
+                            String Token = jsonObject.getString("data");
+                            //Toast.makeText(loginActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            if (jsonObject.getString("code").equals("failure")) {
+                                Toast.makeText(loginActivity.this, msg, Toast.LENGTH_SHORT).show();
+                                return;
+                            } else {
+                                App.getInstance().setMyToken(Token);
+                                startActivity(new Intent(loginActivity.this, MainActivity.class));
+                                finish();
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+                        mDialog.dismiss();
+                        Toast.makeText(loginActivity.this, "未知错误", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     public void register(final String mobile, final String pwd) {

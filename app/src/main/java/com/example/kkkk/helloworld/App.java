@@ -15,6 +15,7 @@
  */
 package com.example.kkkk.helloworld;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
@@ -27,7 +28,11 @@ import android.widget.Toast;
 import com.example.kkkk.helloworld.util.SharedPreUtil;
 import com.example.kkkk.helloworld.util.StringUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.hyphenate.chat.EMOptions;
 import com.jude.utils.JUtils;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Yan Zhenjie on 2016/7/27.
@@ -48,7 +53,7 @@ public class App extends Application {
 
     private String sex;
 
-
+    EMOptions options;
     public static App getInstance() {
         return instance;
     }
@@ -70,6 +75,8 @@ public class App extends Application {
         //registerActivityLifecycleCallbacks(JActivityManager.getActivityLifecycleCallbacks());
 
         //init demo helper
+        options=new EMOptions();
+        options.setAutoLogin(false);
         DemoHelper.getInstance().init(applicationContext);
         //red packet code : 初始化红包SDK，开启日志输出开关
     }
@@ -128,5 +135,4 @@ public class App extends Application {
     public enum Dir {
         Object
     }
-
 }

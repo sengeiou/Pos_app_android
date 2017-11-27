@@ -1,6 +1,8 @@
 package com.example.kkkk.helloworld.Activity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,13 +13,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
+import com.example.kkkk.helloworld.App;
 import com.example.kkkk.helloworld.DemoHelper;
 import com.example.kkkk.helloworld.Fragment.indexPager;
 import com.example.kkkk.helloworld.Fragment.nearbyPager;
 import com.example.kkkk.helloworld.Fragment.userPager;
 import com.example.kkkk.helloworld.R;
 import com.example.kkkk.helloworld.adapter.TablayoutAdapter;
+import com.example.kkkk.helloworld.util.AbToastUtil;
 import com.example.kkkk.helloworld.util.ExitUtils;
+import com.hyphenate.EMCallBack;
 import com.hyphenate.EMMessageListener;
 import com.hyphenate.chat.EMChatManager;
 import com.hyphenate.chat.EMClient;
@@ -37,9 +42,7 @@ public class MainActivity extends BaseAppActivity {
     private ViewPager mViewPager;
     private List<Fragment> mFragments;
     private TablayoutAdapter mAdapter;
-    public boolean isexit = false;
-
-    private ExitUtils exit = new ExitUtils();
+    protected static Toast toast=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,32 +126,6 @@ public class MainActivity extends BaseAppActivity {
 
         super.onStop();
     }
-    //重写onKeyDown方法,
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {//当返回按键被按下
-            //调用exit()方法
-            exit();
-        }
-        return false;
-    }
-    //被调用的exit()方法
-    private void exit() {
-        Timer timer;//声明一个定时器
-        if (!isexit) {  //如果isExit为false,执行下面代码
-            isexit = true;  //改变值为true
-            Toast.makeText(MainActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();  //弹出提示
-            timer = new Timer();  //得到定时器对象
-            //执行定时任务,两秒内如果没有再次按下,把isExit值恢复为false,再次按下返回键时依然会进入if这段代码
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    isexit = false;
-                }
-            }, 2000);
-        } else {//如果两秒内再次按下了返回键,这时isExit的值已经在第一次按下时赋值为true了,因此不会进入if后的代码,直接执行下面的代码
-            finish();
-        }
-    }
     EMMessageListener messageListener = new EMMessageListener() {
 
         @Override
@@ -181,5 +158,35 @@ public class MainActivity extends BaseAppActivity {
         @Override
         public void onMessageChanged(EMMessage message, Object change) {}
     };
+
+    /**
+     * 双击退出函数
+     */
+    //是否退出应用标识
+    private static boolean isExit = false;
+    private void exits() {
+        if (!isExit) {
+            isExit = true;
+            AbToastUtil.showToast(this, "再按一次退出应用!");
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    isExit = false;
+                }
+            }, 2000);
+        } else {
+            finish();
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exits();
+        }
+        return false;
+    }
+
 }
+
 
