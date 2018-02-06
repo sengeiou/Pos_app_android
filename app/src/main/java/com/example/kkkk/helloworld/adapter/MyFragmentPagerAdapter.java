@@ -4,8 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.kkkk.helloworld.Fragment.noreadFragment;
-import com.example.kkkk.helloworld.Fragment.readFragment;
+import com.example.kkkk.helloworld.fragment.noreadFragment;
+import com.example.kkkk.helloworld.fragment.readFragment;
 
 /**
  * Created by Administrator on 2017/11/6.

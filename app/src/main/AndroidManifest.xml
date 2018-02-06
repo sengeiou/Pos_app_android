@@ -43,39 +43,83 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
-        <activity android:name=".Activity.SplashActiivty">
+        <activity
+            android:name=".activity.SplashActiivty"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.loginActivity" />
-        <activity android:name=".Activity.findpwdActivity" />
-        <activity android:name=".Activity.userinfoActivity" />
-        <activity android:name=".Activity.settingActivity" />
-        <activity android:name=".Activity.noticeActivity" />
-        <activity android:name=".Activity.noticedetailActivity" />
-        <activity android:name=".Activity.sendnoticeActivity" />
-        <activity android:name=".Activity.NowTaskActivity" />
-        <activity android:name=".Activity.TaskDetailActivity" />
-        <activity android:name=".Activity.DoTaskActivity" />
-        <activity android:name=".Activity.UserSaetActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.loginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.findpwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.userinfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.settingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.noticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.noticedetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.sendnoticeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NowTaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TaskDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DoTaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UserSaetActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="d1ae7a0bdb8465e930f8072c50f5c2af" />
 
-        <activity android:name=".Activity.SignInActivity" />
-        <activity android:name=".Activity.BaseActivity" />
-        <activity android:name=".Activity.ChatActivity" />
-        <activity android:name=".Activity.ContextMenuActivity" />
-        <activity android:name=".Activity.ImageGridActivity" />
-        <activity android:name=".Activity.RecorderVideoActivity" />
-        <activity android:name=".Activity.CallActivity" />
-        <activity android:name=".Activity.VoiceCallActivity" />
-        <activity android:name=".Activity.VideoCallActivity" />
+        <activity
+            android:name=".activity.SignInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.BaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContextMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ImageGridActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RecorderVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.VoiceCallActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.VideoCallActivity"
+            android:screenOrientation="portrait" />
         <!-- 显示下载大图页面 -->
         <activity
             android:name="com.hyphenate.easeui.ui.EaseShowBigImageActivity"
@@ -143,12 +187,24 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Activity.BaseAppActivity" />
-        <activity android:name=".Activity.StaffInfoActivity" />
-        <activity android:name=".Activity.WorkOrderActivity" />
-        <activity android:name=".Activity.WorkReportActivity" />
-        <activity android:name=".Activity.TrackActivity" />
-        <activity android:name=".Activity.MyNoticeActivity"></activity>
+        <activity
+            android:name=".activity.BaseAppActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.StaffInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WorkOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WorkReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TrackActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyNoticeActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

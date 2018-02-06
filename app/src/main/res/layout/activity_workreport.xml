@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kkkk.helloworld.Activity.WorkOrderActivity">
+    tools:context="com.example.kkkk.helloworld.activity.WorkOrderActivity">
     <RelativeLayout style="@style/topbar_bg">
         <ImageButton
             android:id="@+id/back"

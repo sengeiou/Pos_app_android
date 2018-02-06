@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\one_code\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\common_google_signin_btn_text_dark.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f099902b93f462b1244862ed4172d59e515b98af\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
+        "merged": "/Users/ushimaou/Documents/android_project/PosAppMaster/PosMaster/easeui/build/intermediates/res/merged/androidTest/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/ushimaou/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.0.aar/23ceae7f6d1080fd2763e1cd71f7206d/res/color/common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "D:\\one_code\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\common_google_signin_btn_text_light.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f099902b93f462b1244862ed4172d59e515b98af\\output\\res\\color\\common_google_signin_btn_text_light.xml"
+        "merged": "/Users/ushimaou/Documents/android_project/PosAppMaster/PosMaster/easeui/build/intermediates/res/merged/androidTest/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/ushimaou/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.0.aar/23ceae7f6d1080fd2763e1cd71f7206d/res/color/common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "D:\\one_code\\HelloWorld\\easeui\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\common_google_signin_btn_tint.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\f099902b93f462b1244862ed4172d59e515b98af\\output\\res\\color\\common_google_signin_btn_tint.xml"
+        "merged": "/Users/ushimaou/Documents/android_project/PosAppMaster/PosMaster/easeui/build/intermediates/res/merged/androidTest/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/ushimaou/.gradle/caches/transforms-1/files-1.1/play-services-base-11.4.0.aar/23ceae7f6d1080fd2763e1cd71f7206d/res/color/common_google_signin_btn_tint.xml"
     }
 ]
